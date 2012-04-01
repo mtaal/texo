@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="library-derby">
+	
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- mapping-file>META-INF/identifiable-orm.xml</mapping-file-->
+		<!-- mapping-file>META-INF/library-orm.xml</mapping-file-->
+		<class>org.eclipse.emf.texo.test.mode.base.identifiable.Identifiable</class>
+		<class>org.eclipse.emf.texo.test.model.samples.library.Library</class>
+		<class>org.eclipse.emf.texo.test.model.samples.library.Book</class>
+		<class>org.eclipse.emf.texo.test.model.samples.library.Writer</class>
+		<properties>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:test;create=true"/>
+ 
+			<!-- EclipseLink should create the database schema automatically -->
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		</properties>
+
+	</persistence-unit>
+
+	<persistence-unit name="library-hsqldb">
+	
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<mapping-file>META-INF/identifiable-orm.xml</mapping-file>
+		<mapping-file>META-INF/library-orm.xml</mapping-file>
+		<properties>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.HSQLPlatform"/>
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:test"/>
+         	<property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+			<!-- EclipseLink should create the database schema automatically -->
+
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		</properties>
+
+	</persistence-unit>
+	
+	<persistence-unit name="library-mysql">
+	
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<mapping-file>META-INF/identifiable-orm.xml</mapping-file>
+		<mapping-file>META-INF/library-orm.xml</mapping-file>
+		<properties>
+            <property name="eclipselink.target-database" value="Mysql"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/texo"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+
+			<!-- EclipseLink should create the database schema automatically -->
+
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		</properties>
+
+	</persistence-unit>
+		
+</persistence>

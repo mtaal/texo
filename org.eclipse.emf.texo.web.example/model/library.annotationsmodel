@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:modelannotations="http://www.eclipse.org/emf/texo/modelgenerator/modelannotations">
+  <annotatedEPackages>
+    <ePackage href="library.ecore#/"/>
+    <ePackageAnnotations xsi:type="modelannotations:EPackageModelGenAnnotation" documentation="This is documentation on package level" modelClassesPackagePath="" generateSafeManyAccess="false" rootClassExtends=""/>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="library.ecore#//Book"/>
+      <eClassAnnotations xsi:type="modelannotations:EClassModelGenAnnotation" description="This is a description" documentation="This is documentation"/>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="library.ecore#//Book/title"/>
+        <eAttributeAnnotations xsi:type="modelannotations:EAttributeModelGenAnnotation" description="This is a description" documentation="This is documentation"/>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+  </annotatedEPackages>
+</annotationsmodel:AnnotatedModel>
