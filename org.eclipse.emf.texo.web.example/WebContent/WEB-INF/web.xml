@@ -24,10 +24,32 @@
 		<servlet-class>org.eclipse.emf.texo.web.example.ExampleModelBrowserServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>TexoJSONWS</servlet-name>
+		<servlet-class>org.eclipse.emf.texo.server.web.JSONRestWebServiceServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>TexoXMLWS</servlet-name>
+		<servlet-class>org.eclipse.emf.texo.server.web.XMLRestWebServiceServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>TexoDataModelBrowser</servlet-name>
 		<url-pattern>/model/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TexoJSONWS</servlet-name>
+		<url-pattern>/jsonws/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TexoXMLWS</servlet-name>
+		<url-pattern>/xmlws/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>
