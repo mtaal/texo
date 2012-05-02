@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:modelannotations="http://www.eclipse.org/emf/texo/modelgenerator/modelannotations" xmlns:ormannotations="http://www.eclipse.org/emf/texo/orm/ormannotations">
+  <annotatedEPackages>
+    <ePackage href="identifiable.ecore#/"/>
+    <ePackageAnnotations xsi:type="modelannotations:EPackageModelGenAnnotation" packagePath="org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable" modelClassesPackagePath=""/>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="identifiable.ecore#//Identifiable"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <mappedSuperclass access="FIELD" class=""/>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="identifiable.ecore#//Identifiable/db_Id"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id name="db_Id">
+            <generatedValue strategy="AUTO"/>
+          </id>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="identifiable.ecore#//Identifiable/db_version"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <version convert="" access="FIELD" name="db_version"/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="identifiable.ecore#//IdentifiableInterface"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <mappedSuperclass access="PROPERTY" class=""/>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="identifiable.ecore#//IdentifiableInterface/db_Id"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <id convert="" access="PROPERTY" name="db_Id">
+            <generatedValue strategy="AUTO"/>
+          </id>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="identifiable.ecore#//IdentifiableInterface/db_version"/>
+        <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
+          <version convert="" access="PROPERTY" name="db_version"/>
+        </eAttributeAnnotations>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+  </annotatedEPackages>
+</annotationsmodel:AnnotatedModel>

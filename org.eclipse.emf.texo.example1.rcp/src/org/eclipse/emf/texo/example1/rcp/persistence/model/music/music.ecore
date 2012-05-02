@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="music"
+    nsURI="http://www.eclipse.org/emf/texo/test/model/samples/music" nsPrefix="org.elver.music">
+  <eClassifiers xsi:type="ecore:EClass" name="Artist" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="firstName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="lastName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="birthDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="country" eType="#//Country">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="country"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genre" eType="#//Genre">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="genre"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Album" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artist" eType="#//Artist">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="artist"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="releaseDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genres" upperBound="-1"
+        eType="#//Genre">
+      <eAnnotations source="teneo.jpa">
+        <details key="value" value="@ManyToMany"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="genres"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="songs" upperBound="-1"
+        eType="#//Song">
+      <eAnnotations source="teneo.jpa">
+        <details key="value" value="@OneToMany"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="songs"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratings" unique="false"
+        upperBound="-1" eType="#//Rating">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="ratings"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Country" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="code"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Genre" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Song" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="track" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="track"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Rating">
+    <eLiterals name="LOW"/>
+    <eLiterals name="HIGH" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>
+

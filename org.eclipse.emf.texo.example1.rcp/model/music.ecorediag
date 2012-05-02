@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_kraLYIrGEeG8csyc97W2UA" type="EcoreTools" name="music.ecorediag" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_krjVUIrGEeG8csyc97W2UA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_krjVU4rGEeG8csyc97W2UA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_krjVVIrGEeG8csyc97W2UA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_krtGVIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Artist/id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGVYrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGVorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Artist/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGV4rGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGWIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Artist/firstName"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGWYrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGWorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Artist/lastName"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGW4rGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGXIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Artist/birthDate"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGXYrGEeG8csyc97W2UA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krjVVYrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krjVVorGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krjVV4rGEeG8csyc97W2UA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_krtGUIrGEeG8csyc97W2UA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGUYrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGUorGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGU4rGEeG8csyc97W2UA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_krjVUYrGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="music.ecore#//Artist"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krjVUorGEeG8csyc97W2UA" x="49" y="141"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_krtGXorGEeG8csyc97W2UA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_krtGYYrGEeG8csyc97W2UA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_krtGYorGEeG8csyc97W2UA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_krtGaorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Album/id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGa4rGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGbIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Album/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGbYrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGborGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Album/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGb4rGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGcIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Album/releaseDate"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGcYrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGcorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Album/ratings"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGc4rGEeG8csyc97W2UA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGY4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGZIrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGZYrGEeG8csyc97W2UA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_krtGZorGEeG8csyc97W2UA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGZ4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGaIrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGaYrGEeG8csyc97W2UA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_krtGX4rGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="music.ecore#//Album"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krtGYIrGEeG8csyc97W2UA" x="217" y="314"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_krtGdIrGEeG8csyc97W2UA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_krtGd4rGEeG8csyc97W2UA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_krtGeIrGEeG8csyc97W2UA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_krtGgIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Country/code"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGgYrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGgorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Country/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGg4rGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGhIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Country/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGhYrGEeG8csyc97W2UA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGeYrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGeorGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGe4rGEeG8csyc97W2UA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_krtGfIrGEeG8csyc97W2UA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGfYrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGforGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGf4rGEeG8csyc97W2UA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_krtGdYrGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="music.ecore#//Country"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krtGdorGEeG8csyc97W2UA"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_krtGhorGEeG8csyc97W2UA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_krtGiYrGEeG8csyc97W2UA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_krtGiorGEeG8csyc97W2UA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_krtGkorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Genre/id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGk4rGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGlIrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Genre/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGlYrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_krtGlorGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Genre/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_krtGl4rGEeG8csyc97W2UA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGi4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGjIrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGjYrGEeG8csyc97W2UA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_krtGjorGEeG8csyc97W2UA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_krtGj4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_krtGkIrGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_krtGkYrGEeG8csyc97W2UA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_krtGh4rGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="music.ecore#//Genre"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krtGiIrGEeG8csyc97W2UA" x="217"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_krtGmIrGEeG8csyc97W2UA" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_kr23UIrGEeG8csyc97W2UA" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_kr23UYrGEeG8csyc97W2UA" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_kr23VYrGEeG8csyc97W2UA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="music.ecore#//Rating/LOW"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23VorGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kr23V4rGEeG8csyc97W2UA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="music.ecore#//Rating/HIGH"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23WIrGEeG8csyc97W2UA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_kr23UorGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_kr23U4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_kr23VIrGEeG8csyc97W2UA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_krtGmYrGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="music.ecore#//Rating"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krtGmorGEeG8csyc97W2UA" x="434"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_kr23WYrGEeG8csyc97W2UA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_kr23XIrGEeG8csyc97W2UA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_kr23XYrGEeG8csyc97W2UA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_kr23ZYrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Song/id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23ZorGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kr23Z4rGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Song/version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23aIrGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kr23aYrGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Song/track"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23aorGEeG8csyc97W2UA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kr23a4rGEeG8csyc97W2UA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="music.ecore#//Song/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23bIrGEeG8csyc97W2UA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_kr23XorGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_kr23X4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_kr23YIrGEeG8csyc97W2UA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_kr23YYrGEeG8csyc97W2UA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_kr23YorGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_kr23Y4rGEeG8csyc97W2UA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_kr23ZIrGEeG8csyc97W2UA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_kr23WorGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="music.ecore#//Song"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kr23W4rGEeG8csyc97W2UA" x="385" y="141"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_kraLYYrGEeG8csyc97W2UA"/>
+  <element xmi:type="ecore:EPackage" href="music.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_kr23bYrGEeG8csyc97W2UA" type="3002" source="_krjVUIrGEeG8csyc97W2UA" target="_krtGdIrGEeG8csyc97W2UA">
+    <children xmi:type="notation:Node" xmi:id="_kr23cYrGEeG8csyc97W2UA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23corGEeG8csyc97W2UA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_kr23c4rGEeG8csyc97W2UA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23dIrGEeG8csyc97W2UA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_kr23borGEeG8csyc97W2UA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kr23b4rGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="music.ecore#//Artist/country"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kr23cIrGEeG8csyc97W2UA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr84rGEeG8csyc97W2UA" id="(0.4968152866242038,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr9IrGEeG8csyc97W2UA" id="(0.8089171974522293,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_kr23dYrGEeG8csyc97W2UA" type="3002" source="_krjVUIrGEeG8csyc97W2UA" target="_krtGhorGEeG8csyc97W2UA">
+    <children xmi:type="notation:Node" xmi:id="_kr23eYrGEeG8csyc97W2UA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23eorGEeG8csyc97W2UA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_kr23e4rGEeG8csyc97W2UA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23fIrGEeG8csyc97W2UA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_kr23dorGEeG8csyc97W2UA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kr23d4rGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="music.ecore#//Artist/genre"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kr23eIrGEeG8csyc97W2UA" points="[0, 0, -90, 60]$[90, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr9YrGEeG8csyc97W2UA" id="(0.7452229299363057,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr9orGEeG8csyc97W2UA" id="(0.2484076433121019,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_kr23fYrGEeG8csyc97W2UA" type="3002" source="_krtGXorGEeG8csyc97W2UA" target="_krjVUIrGEeG8csyc97W2UA">
+    <children xmi:type="notation:Node" xmi:id="_kr23gYrGEeG8csyc97W2UA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kr23gorGEeG8csyc97W2UA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ksABQIrGEeG8csyc97W2UA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ksABQYrGEeG8csyc97W2UA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_kr23forGEeG8csyc97W2UA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kr23f4rGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="music.ecore#//Album/artist"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kr23gIrGEeG8csyc97W2UA" points="[0, 0, 129, 60]$[-129, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kt768IrGEeG8csyc97W2UA" id="(0.2484076433121019,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr8IrGEeG8csyc97W2UA" id="(0.4968152866242038,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ksABQorGEeG8csyc97W2UA" type="3002" source="_krtGXorGEeG8csyc97W2UA" target="_krtGhorGEeG8csyc97W2UA">
+    <children xmi:type="notation:Node" xmi:id="_ksABRorGEeG8csyc97W2UA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ksABR4rGEeG8csyc97W2UA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ksABSIrGEeG8csyc97W2UA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ksABSYrGEeG8csyc97W2UA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ksABQ4rGEeG8csyc97W2UA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ksABRIrGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="music.ecore#//Album/genres"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ksABRYrGEeG8csyc97W2UA" points="[0, 0, 0, 233]$[0, -233, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr94rGEeG8csyc97W2UA" id="(0.4968152866242038,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr-IrGEeG8csyc97W2UA" id="(0.4968152866242038,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ksABSorGEeG8csyc97W2UA" type="3002" source="_krtGXorGEeG8csyc97W2UA" target="_kr23WYrGEeG8csyc97W2UA">
+    <children xmi:type="notation:Node" xmi:id="_ksABTorGEeG8csyc97W2UA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ksABT4rGEeG8csyc97W2UA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ksABUIrGEeG8csyc97W2UA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ksABUYrGEeG8csyc97W2UA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ksABS4rGEeG8csyc97W2UA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ksABTIrGEeG8csyc97W2UA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="music.ecore#//Album/songs"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ksABTYrGEeG8csyc97W2UA" points="[0, 0, -129, 76]$[129, -76, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr8YrGEeG8csyc97W2UA" id="(0.7452229299363057,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kuFr8orGEeG8csyc97W2UA" id="(0.4968152866242038,1.0)"/>
+  </edges>
+</notation:Diagram>

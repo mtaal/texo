@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="hsqldb">
+	
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Album</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Artist</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Country</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Genre</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Song</class>	
+		<properties>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.HSQLPlatform"/>
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:test"/>
+         	<property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+			<!-- EclipseLink should create the database schema automatically -->
+
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		</properties>
+
+	</persistence-unit>
+	
+	<persistence-unit name="mysql">
+	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable</class>
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Album</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Artist</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Country</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Genre</class>	
+		<class>org.eclipse.emf.texo.example1.rcp.persistence.model.music.Song</class>	
+		<properties>
+            <property name="eclipselink.target-database" value="Mysql"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+
+			<!-- EclipseLink should create the database schema automatically -->
+
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		</properties>
+
+	</persistence-unit>
+		
+</persistence>

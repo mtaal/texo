@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.eclipse.emf.texo.example1.rcp.application.TexoRCPApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="org.eclipse.emf.texo.example1.rcp.application.Perspective"
+            id="TexoRCP.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="org.eclipse.emf.texo.example1.rcp.views.View"
+            id="org.eclipse.emf.texo.example1.rcp.views.view">
+      </view>
+      <view
+            class="org.eclipse.emf.texo.example1.rcp.views.EditorView"
+            id="org.eclipse.emf.texo.example1.rcp.views.editorview"
+            name="Editor View">
+      </view>
+      <view
+            class="org.eclipse.emf.texo.example1.rcp.views.ListView"
+            id="org.eclipse.emf.texo.example1.rcp.views.ListView"
+            name="Available Albums">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.emf.texo.example1.rcp.commands.newalbum"
+                  label="new album">
+            </command>
+            <command
+                  commandId="org.eclipse.emf.texo.example1.rcp.commands.loadexamplealbum"
+                  label="load example album">
+            </command>
+            <separator
+                  name="loadSeperator"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="org.eclipse.emf.texo.example1.rcp.commands.load"
+                  label="load">
+            </command>
+            <command
+                  commandId="org.eclipse.emf.texo.example1.rcp.commands.save"
+                  label="save">
+            </command>
+            <separator
+                  name="exitSeperator"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.emf.texo.example1.rcp.commands.Load"
+            id="org.eclipse.emf.texo.example1.rcp.commands.load"
+            name="load">
+      </command>
+      <command
+            defaultHandler="org.eclipse.emf.texo.example1.rcp.commands.Save"
+            id="org.eclipse.emf.texo.example1.rcp.commands.save"
+            name="save">
+      </command>
+      <command
+            defaultHandler="org.eclipse.emf.texo.example1.rcp.commands.LoadExampleAlbum"
+            id="org.eclipse.emf.texo.example1.rcp.commands.loadexamplealbum"
+            name="load example album">
+      </command>
+      <command
+            defaultHandler="org.eclipse.emf.texo.example1.rcp.commands.NewAlbum"
+            id="org.eclipse.emf.texo.example1.rcp.commands.newalbum"
+            name="new album">
+      </command>
+   </extension>
+
+</plugin>

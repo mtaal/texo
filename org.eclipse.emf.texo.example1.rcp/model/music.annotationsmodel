@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:modelannotations="http://www.eclipse.org/emf/texo/modelgenerator/modelannotations">
+  <annotatedEPackages>
+    <ePackage href="music.ecore#/"/>
+    <ePackageAnnotations xsi:type="modelannotations:EPackageModelGenAnnotation" packagePath="org.eclipse.emf.texo.example1.rcp.persistence.model.music"/>
+  </annotatedEPackages>
+</annotationsmodel:AnnotatedModel>
