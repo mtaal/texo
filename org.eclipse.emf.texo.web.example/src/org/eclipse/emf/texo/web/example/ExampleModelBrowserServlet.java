@@ -26,11 +26,11 @@ import javax.persistence.EntityManager;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.texo.converter.EMFModelConverter;
 import org.eclipse.emf.texo.datagenerator.DataGeneratorUtils;
 import org.eclipse.emf.texo.datagenerator.ModelDataGenerator;
 import org.eclipse.emf.texo.server.store.EntityManagerProvider;
 import org.eclipse.emf.texo.server.web.DataModelBrowserServlet;
-import org.eclipse.emf.texo.xml.EMFModelConverter;
 
 /**
  * Example model browser servlet which is capable of generating test data also.
