@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderColumn;
+import javax.persistence.Table;
 import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
@@ -16,7 +18,8 @@ import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
  * 
  * @generated
  */
-@Entity(name = "Writer")
+@Entity(name = "library_Writer")
+@Table(name = "library_Writer")
 public class Writer extends Identifiable {
 
 	/**
@@ -24,7 +27,8 @@ public class Writer extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
+	@Column(name = "name")
 	private String name = null;
 
 	/**
@@ -33,9 +37,8 @@ public class Writer extends Identifiable {
 	 * @generated
 	 */
 	@OneToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, targetEntity = Book.class)
-	@OrderColumn()
-	@JoinTable(name = "Writer_books")
+			CascadeType.REFRESH })
+	@JoinTable(joinColumns = { @JoinColumn(name = "library_Writer_id") }, inverseJoinColumns = { @JoinColumn(name = "library_Book_id") }, name = "library_Writer_books")
 	private List<Book> books = new ArrayList<Book>();
 
 	/**

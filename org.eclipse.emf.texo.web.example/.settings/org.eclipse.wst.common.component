@@ -4,6 +4,21 @@
         <wb-resource deploy-path="/" source-path="/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src-gen"/>
+        <dependent-module archiveName="org.eclipse.emf.texo.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.emf.texo/org.eclipse.emf.texo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.emf.texo.server.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.emf.texo.server/org.eclipse.emf.texo.server">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.emf.texo.datagenerator.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.emf.texo.datagenerator/org.eclipse.emf.texo.datagenerator">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.emf.texo.json.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.emf.texo.json/org.eclipse.emf.texo.json">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.eclipse.emf.texo.xml.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.eclipse.emf.texo.xml/org.eclipse.emf.texo.xml">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="org.eclipse.emf.texo.web.example"/>
         <property name="java-output-path" value="/org.eclipse.emf.texo.web.example/build/classes"/>
     </wb-module>

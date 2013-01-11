@@ -15,8 +15,8 @@ import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelFactor
  * contains code to create instances {@link ModelObject} wrappers and instances
  * for EClasses and convert objects back and forth from their String (XML)
  * representation. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
- * begin-model-doc --> This is documentation on package level * <!--
- * end-model-doc -->
+ * begin-model-doc --> This is documentation on package level <!-- end-model-doc
+ * -->
  * 
  * @generated
  */
@@ -298,7 +298,7 @@ public class LibraryModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			}
-			super.eAddTo(eStructuralFeature, value);
+			super.eRemoveFrom(eStructuralFeature, value);
 		}
 	}
 
@@ -384,10 +384,10 @@ public class LibraryModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case LibraryModelPackage.WRITER_BOOKS_FEATURE_ID:
-				getTarget().getBooks().remove((Book) value);
+				getTarget().getBooks().remove(value);
 				return;
 			}
-			super.eAddTo(eStructuralFeature, value);
+			super.eRemoveFrom(eStructuralFeature, value);
 		}
 	}
 
@@ -482,15 +482,14 @@ public class LibraryModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case LibraryModelPackage.LIBRARY_WRITERS_FEATURE_ID:
-				getTarget().getWriters().remove((Writer) value);
+				getTarget().getWriters().remove(value);
 				return;
 
 			case LibraryModelPackage.LIBRARY_BOOKS_FEATURE_ID:
-				getTarget().getBooks().remove((Book) value);
+				getTarget().getBooks().remove(value);
 				return;
 			}
-			super.eAddTo(eStructuralFeature, value);
+			super.eRemoveFrom(eStructuralFeature, value);
 		}
 	}
-
 }

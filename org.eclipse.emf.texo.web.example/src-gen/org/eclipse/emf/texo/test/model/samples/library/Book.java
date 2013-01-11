@@ -2,10 +2,14 @@ package org.eclipse.emf.texo.test.model.samples.library;
 
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
@@ -15,7 +19,8 @@ import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
  * 
  * @generated
  */
-@Entity(name = "Book")
+@Entity(name = "library_Book")
+@Table(name = "library_Book")
 public class Book extends Identifiable {
 
 	/**
@@ -24,7 +29,8 @@ public class Book extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
+	@Column(name = "title")
 	private String title = null;
 
 	/**
@@ -32,7 +38,8 @@ public class Book extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
+	@Column(name = "pages")
 	private int pages = 100;
 
 	/**
@@ -40,7 +47,9 @@ public class Book extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
+	@Column(name = "category")
+	@Enumerated(EnumType.ORDINAL)
 	private BookCategory category = BookCategory.SCIENCEFICTION;
 
 	/**
@@ -49,8 +58,8 @@ public class Book extends Identifiable {
 	 * @generated
 	 */
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, optional = false, targetEntity = Writer.class)
-	@JoinColumns({ @JoinColumn() })
+			CascadeType.REFRESH }, optional = false)
+	@JoinColumns({ @JoinColumn(name = "author") })
 	private Writer author = null;
 
 	/**

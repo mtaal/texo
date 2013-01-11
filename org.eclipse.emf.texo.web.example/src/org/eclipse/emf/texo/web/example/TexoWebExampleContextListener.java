@@ -38,7 +38,7 @@ public class TexoWebExampleContextListener implements ServletContextListener {
   @Override
   public void contextInitialized(ServletContextEvent arg0) {
     ServiceModelPackageRegistry.getInstance().register(LibraryModelPackage.INSTANCE);
-    EntityManagerProvider.getInstance().setPersistenceUnitName("library-derby"); //$NON-NLS-1$
+    EntityManagerProvider.getInstance().setPersistenceUnitName("library-derby2"); //$NON-NLS-1$
     // initialize aggressively
     EntityManagerProvider.getInstance().initialize();
   }

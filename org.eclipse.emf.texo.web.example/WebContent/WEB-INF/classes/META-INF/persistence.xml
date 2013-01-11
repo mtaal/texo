@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="library-derby">
+	<persistence-unit name="library-derby2">
 	
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<!-- mapping-file>META-INF/identifiable-orm.xml</mapping-file-->
@@ -12,6 +12,7 @@
 		<class>org.eclipse.emf.texo.test.model.samples.library.Library</class>
 		<class>org.eclipse.emf.texo.test.model.samples.library.Book</class>
 		<class>org.eclipse.emf.texo.test.model.samples.library.Writer</class>
+
 		<properties>
             <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>

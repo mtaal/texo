@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<orm:entity-mappings xmlns:orm="http://www.eclipse.org/eclipselink/xsds/persistence/orm" version="2.3">
+  <orm:persistence-unit-metadata>
+    <orm:persistence-unit-defaults>
+      <orm:delimited-identifiers/>
+    </orm:persistence-unit-defaults>
+  </orm:persistence-unit-metadata>
+  <orm:access>FIELD</orm:access>
+  <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Book" name="library_Book">
+    <orm:table name="library_Book"/>
+    <orm:attributes>
+      <orm:basic name="title">
+        <orm:column name="title"/>
+      </orm:basic>
+      <orm:basic name="pages">
+        <orm:column name="pages"/>
+      </orm:basic>
+      <orm:basic name="category">
+        <orm:column name="category"/>
+        <orm:enumerated>ORDINAL</orm:enumerated>
+      </orm:basic>
+      <orm:many-to-one name="author" optional="false">
+        <orm:join-column name="author"/>
+        <orm:cascade>
+          <orm:cascade-persist/>
+          <orm:cascade-merge/>
+          <orm:cascade-refresh/>
+        </orm:cascade>
+      </orm:many-to-one>
+    </orm:attributes>
+  </orm:entity>
+  <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Writer" name="library_Writer">
+    <orm:table name="library_Writer"/>
+    <orm:attributes>
+      <orm:basic name="name">
+        <orm:column name="name"/>
+      </orm:basic>
+      <orm:one-to-many name="books">
+        <orm:join-table name="library_Writer_books">
+          <orm:join-column name="library_Writer_id"/>
+          <orm:inverse-join-column name="library_Book_id"/>
+        </orm:join-table>
+        <orm:cascade>
+          <orm:cascade-persist/>
+          <orm:cascade-merge/>
+          <orm:cascade-refresh/>
+        </orm:cascade>
+      </orm:one-to-many>
+    </orm:attributes>
+  </orm:entity>
+  <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Library" name="library_Library">
+    <orm:table name="library_Library"/>
+    <orm:attributes>
+      <orm:basic name="name">
+        <orm:column name="name"/>
+      </orm:basic>
+      <orm:one-to-many name="writers">
+        <orm:join-column name="library_Library_id"/>
+        <orm:cascade>
+          <orm:cascade-all/>
+        </orm:cascade>
+      </orm:one-to-many>
+      <orm:one-to-many name="books">
+        <orm:join-column name="library_Library_id"/>
+        <orm:cascade>
+          <orm:cascade-all/>
+        </orm:cascade>
+      </orm:one-to-many>
+    </orm:attributes>
+  </orm:entity>
+</orm:entity-mappings>

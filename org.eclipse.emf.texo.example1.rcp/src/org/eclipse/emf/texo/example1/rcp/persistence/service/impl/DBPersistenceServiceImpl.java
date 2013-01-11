@@ -48,7 +48,7 @@ public class DBPersistenceServiceImpl implements PersistenceService {
 
 	@Override
 	public boolean save(List<EObject> data) {
-		getEPersistenceService().persist(data, new ArrayList<EObject>());
+		getEPersistenceService().persist(Collections.<EObject> emptyList(), data, new ArrayList<EObject>());
 		return true;
 	}
 

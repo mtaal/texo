@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_t-YSsB3eEeKCsokVeL79TA" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_t_xZ0B3eEeKCsokVeL79TA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_uAYd0B3eEeKCsokVeL79TA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_uAaTAB3eEeKCsokVeL79TA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_uAbhIB3eEeKCsokVeL79TA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="identifiable.ecore#//Identifiable/db_Id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_uAbhIR3eEeKCsokVeL79TA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_uAbhIh3eEeKCsokVeL79TA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="identifiable.ecore#//Identifiable/db_version"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_uAbhIx3eEeKCsokVeL79TA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_uAaTAR3eEeKCsokVeL79TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_uAaTAh3eEeKCsokVeL79TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_uAaTAx3eEeKCsokVeL79TA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_uAa6EB3eEeKCsokVeL79TA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_uAa6ER3eEeKCsokVeL79TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_uAa6Eh3eEeKCsokVeL79TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_uAa6Ex3eEeKCsokVeL79TA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_t_xZ0R3eEeKCsokVeL79TA" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="identifiable.ecore#//Identifiable"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t_xZ0h3eEeKCsokVeL79TA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_t-YSsR3eEeKCsokVeL79TA"/>
+  <element xmi:type="ecore:EPackage" href="identifiable.ecore#/"/>
+</notation:Diagram>

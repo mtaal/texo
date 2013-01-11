@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderColumn;
+import javax.persistence.Table;
 import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
@@ -17,7 +18,8 @@ import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
  * 
  * @generated
  */
-@Entity(name = "Library")
+@Entity(name = "library_Library")
+@Table(name = "library_Library")
 public class Library extends Identifiable {
 
 	/**
@@ -25,7 +27,8 @@ public class Library extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
+	@Column(name = "name")
 	private String name = null;
 
 	/**
@@ -33,9 +36,8 @@ public class Library extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@OneToMany(cascade = { CascadeType.ALL }, targetEntity = Writer.class)
-	@OrderColumn()
-	@JoinColumns({ @JoinColumn() })
+	@OneToMany(cascade = { CascadeType.ALL })
+	@JoinColumns({ @JoinColumn(name = "library_Library_id") })
 	private List<Writer> writers = new ArrayList<Writer>();
 
 	/**
@@ -43,9 +45,8 @@ public class Library extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@OneToMany(cascade = { CascadeType.ALL }, targetEntity = Book.class)
-	@OrderColumn()
-	@JoinColumns({ @JoinColumn() })
+	@OneToMany(cascade = { CascadeType.ALL })
+	@JoinColumns({ @JoinColumn(name = "library_Library_id") })
 	private List<Book> books = new ArrayList<Book>();
 
 	/**
