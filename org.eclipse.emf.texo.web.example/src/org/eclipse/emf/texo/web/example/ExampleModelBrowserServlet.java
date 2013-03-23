@@ -80,7 +80,13 @@ public class ExampleModelBrowserServlet extends DataModelBrowserServlet {
     final EntityManager entityManager = EntityManagerProvider.getInstance().createEntityManager();
     entityManager.getTransaction().begin();
     for (Object o : modelObjects) {
-      entityManager.persist(o);
+      try {
+    	entityManager.persist(o);
+      } catch (Throwable t) {
+    	// show the error 
+    	t.printStackTrace(System.err);
+    	throw new RuntimeException(t);
+      }
     }
     entityManager.getTransaction().commit();
     EntityManagerProvider.getInstance().releaseEntityManager(entityManager);

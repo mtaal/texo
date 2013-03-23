@@ -53,8 +53,8 @@ public class Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Identifiable#getDb_Id() db_Id}'
+	 * @param newDb_Id
+	 *            the new value of the '{@link Identifiable#getDb_Id() db_Id}'
 	 *            feature.
 	 * @generated
 	 */
@@ -80,8 +80,8 @@ public class Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Identifiable#getDb_version()
+	 * @param newDb_version
+	 *            the new value of the '{@link Identifiable#getDb_version()
 	 *            db_version}' feature.
 	 * @generated
 	 */

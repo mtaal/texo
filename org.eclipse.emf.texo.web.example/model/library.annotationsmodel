@@ -3,6 +3,9 @@
   <annotatedEPackages>
     <ePackage href="library.ecore#/"/>
     <ePackageAnnotations xsi:type="modelannotations:EPackageModelGenAnnotation" documentation="This is documentation on package level" modelClassesPackagePath="" generateSafeManyAccess="false" rootClassExtends=""/>
+    <ePackageAnnotations xsi:type="ormannotations:EPackageORMAnnotation" generated="false" generateFullDbSchemaNames="true" maximumSqlNameLength="255" lowerCasedNames="false" upperCasedNames="false" enforceUniqueNames="true" useJoinTablesForContainment="false" useJoinTablesForNonContainment="true" generateJavaAnnotations="false" addOrderColumnToListMappings="false" renameSQLReservedNames="true" uniqueEntityNames="true" setDelimitedIdentifierTagInORM="true">
+      <inheritance strategy="JOINED"/>
+    </ePackageAnnotations>
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
       <eClass href="library.ecore#//Book"/>
       <eClassAnnotations xsi:type="modelannotations:EClassModelGenAnnotation" description="This is a description" documentation="This is documentation"/>

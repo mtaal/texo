@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
@@ -21,6 +23,7 @@ import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
  */
 @Entity(name = "library_Book")
 @Table(name = "library_Book")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Book extends Identifiable {
 
 	/**
@@ -59,7 +62,7 @@ public class Book extends Identifiable {
 	 */
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.REFRESH }, optional = false)
-	@JoinColumns({ @JoinColumn(name = "author") })
+	@JoinColumns({ @JoinColumn(name = "library_Book_author") })
 	private Writer author = null;
 
 	/**
@@ -81,8 +84,8 @@ public class Book extends Identifiable {
 	 * <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * This is documentation <!-- end-model-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Book#getTitle() title}' feature.
+	 * @param newTitle
+	 *            the new value of the '{@link Book#getTitle() title}' feature.
 	 * @generated
 	 */
 	public void setTitle(String newTitle) {
@@ -106,8 +109,8 @@ public class Book extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Book#getPages() pages}' feature.
+	 * @param newPages
+	 *            the new value of the '{@link Book#getPages() pages}' feature.
 	 * @generated
 	 */
 	public void setPages(int newPages) {
@@ -131,8 +134,8 @@ public class Book extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Book#getCategory() category}'
+	 * @param newCategory
+	 *            the new value of the '{@link Book#getCategory() category}'
 	 *            feature.
 	 * @generated
 	 */
@@ -157,8 +160,9 @@ public class Book extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Book#getAuthor() author}' feature.
+	 * @param newAuthor
+	 *            the new value of the '{@link Book#getAuthor() author}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setAuthor(Writer newAuthor) {

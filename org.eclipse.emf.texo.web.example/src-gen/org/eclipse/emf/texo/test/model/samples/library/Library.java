@@ -6,6 +6,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.OneToMany;
@@ -20,6 +22,7 @@ import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
  */
 @Entity(name = "library_Library")
 @Table(name = "library_Library")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Library extends Identifiable {
 
 	/**
@@ -37,7 +40,7 @@ public class Library extends Identifiable {
 	 * @generated
 	 */
 	@OneToMany(cascade = { CascadeType.ALL })
-	@JoinColumns({ @JoinColumn(name = "library_Library_id") })
+	@JoinColumns({ @JoinColumn(name = "library_Library_writers") })
 	private List<Writer> writers = new ArrayList<Writer>();
 
 	/**
@@ -46,7 +49,7 @@ public class Library extends Identifiable {
 	 * @generated
 	 */
 	@OneToMany(cascade = { CascadeType.ALL })
-	@JoinColumns({ @JoinColumn(name = "library_Library_id") })
+	@JoinColumns({ @JoinColumn(name = "library_Library_books") })
 	private List<Book> books = new ArrayList<Book>();
 
 	/**
@@ -66,8 +69,8 @@ public class Library extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Library#getName() name}' feature.
+	 * @param newName
+	 *            the new value of the '{@link Library#getName() name}' feature.
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -89,6 +92,9 @@ public class Library extends Identifiable {
 	/**
 	 * Adds to the <em>writers</em> feature.
 	 * 
+	 * @param writersValue
+	 *            the value to add
+	 * 
 	 * @generated
 	 */
 	public void addToWriters(Writer writersValue) {
@@ -99,6 +105,9 @@ public class Library extends Identifiable {
 
 	/**
 	 * Removes from the <em>writers</em> feature.
+	 * 
+	 * @param writersValue
+	 *            the value to remove
 	 * 
 	 * @generated
 	 */
@@ -124,8 +133,8 @@ public class Library extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Library#getWriters() writers}'
+	 * @param newWriters
+	 *            the new value of the '{@link Library#getWriters() writers}'
 	 *            feature.
 	 * @generated
 	 */
@@ -148,6 +157,9 @@ public class Library extends Identifiable {
 	/**
 	 * Adds to the <em>books</em> feature.
 	 * 
+	 * @param booksValue
+	 *            the value to add
+	 * 
 	 * @generated
 	 */
 	public void addToBooks(Book booksValue) {
@@ -158,6 +170,9 @@ public class Library extends Identifiable {
 
 	/**
 	 * Removes from the <em>books</em> feature.
+	 * 
+	 * @param booksValue
+	 *            the value to remove
 	 * 
 	 * @generated
 	 */
@@ -183,8 +198,9 @@ public class Library extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Library#getBooks() books}' feature.
+	 * @param newBooks
+	 *            the new value of the '{@link Library#getBooks() books}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setBooks(List<Book> newBooks) {

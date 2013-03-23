@@ -10,7 +10,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.model.ModelResolver;
+import org.eclipse.emf.texo.server.store.DaoRegistry;
 import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelPackage;
+import org.eclipse.emf.texo.test.model.samples.library.dao.BookDao;
+import org.eclipse.emf.texo.test.model.samples.library.dao.LibraryDao;
+import org.eclipse.emf.texo.test.model.samples.library.dao.WriterDao;
 import org.eclipse.emf.texo.utils.ModelUtils;
 
 /**
@@ -150,6 +154,8 @@ public class LibraryModelPackage extends ModelPackage {
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
+	 * @return an initialized instance of this class
+	 * 
 	 * @generated
 	 */
 	public static LibraryModelPackage initialize() {
@@ -186,6 +192,10 @@ public class LibraryModelPackage extends ModelPackage {
 		ModelResolver.getInstance().registerClassModelMapping(
 				BookCategory.class, modelPackage.getBookCategoryEEnum(),
 				modelPackage);
+
+		DaoRegistry.getInstance().registerDao(Book.class, BookDao.class);
+		DaoRegistry.getInstance().registerDao(Writer.class, WriterDao.class);
+		DaoRegistry.getInstance().registerDao(Library.class, LibraryDao.class);
 
 		// and return ourselves
 		return modelPackage;
@@ -412,8 +422,9 @@ public class LibraryModelPackage extends ModelPackage {
 			return Library.class;
 		case BOOKCATEGORY_CLASSIFIER_ID:
 			return BookCategory.class;
+		default:
+			throw new IllegalArgumentException("The EClassifier '"
+					+ eClassifier + "' is not defined in this EPackage");
 		}
-		throw new IllegalArgumentException("The EClassifier '" + eClassifier
-				+ "' is not defined in this EPackage");
 	}
 }

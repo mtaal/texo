@@ -6,6 +6,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
@@ -20,6 +22,7 @@ import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
  */
 @Entity(name = "library_Writer")
 @Table(name = "library_Writer")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Writer extends Identifiable {
 
 	/**
@@ -38,7 +41,7 @@ public class Writer extends Identifiable {
 	 */
 	@OneToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.REFRESH })
-	@JoinTable(joinColumns = { @JoinColumn(name = "library_Writer_id") }, inverseJoinColumns = { @JoinColumn(name = "library_Book_id") }, name = "library_Writer_books")
+	@JoinTable(joinColumns = { @JoinColumn(name = "library_Writer_books") }, inverseJoinColumns = { @JoinColumn(name = "books_library_Book") }, name = "library_Writer_books")
 	private List<Book> books = new ArrayList<Book>();
 
 	/**
@@ -58,8 +61,8 @@ public class Writer extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Writer#getName() name}' feature.
+	 * @param newName
+	 *            the new value of the '{@link Writer#getName() name}' feature.
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -81,6 +84,9 @@ public class Writer extends Identifiable {
 	/**
 	 * Adds to the <em>books</em> feature.
 	 * 
+	 * @param booksValue
+	 *            the value to add
+	 * 
 	 * @generated
 	 */
 	public void addToBooks(Book booksValue) {
@@ -91,6 +97,9 @@ public class Writer extends Identifiable {
 
 	/**
 	 * Removes from the <em>books</em> feature.
+	 * 
+	 * @param booksValue
+	 *            the value to remove
 	 * 
 	 * @generated
 	 */
@@ -116,8 +125,9 @@ public class Writer extends Identifiable {
 	 * 
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Writer#getBooks() books}' feature.
+	 * @param newBooks
+	 *            the new value of the '{@link Writer#getBooks() books}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setBooks(List<Book> newBooks) {

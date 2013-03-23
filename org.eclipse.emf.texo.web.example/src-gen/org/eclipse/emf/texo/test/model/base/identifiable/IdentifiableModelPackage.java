@@ -78,6 +78,8 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
+	 * @return an initialized instance of this class
+	 * 
 	 * @generated
 	 */
 	public static IdentifiableModelPackage initialize() {
@@ -203,8 +205,9 @@ public class IdentifiableModelPackage extends ModelPackage {
 		switch (eClassifier.getClassifierID()) {
 		case IDENTIFIABLE_CLASSIFIER_ID:
 			return Identifiable.class;
+		default:
+			throw new IllegalArgumentException("The EClassifier '"
+					+ eClassifier + "' is not defined in this EPackage");
 		}
-		throw new IllegalArgumentException("The EClassifier '" + eClassifier
-				+ "' is not defined in this EPackage");
 	}
 }

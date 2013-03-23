@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<orm:entity-mappings xmlns:orm="http://www.eclipse.org/eclipselink/xsds/persistence/orm" version="2.3">
+<orm:entity-mappings xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
   <orm:persistence-unit-metadata>
     <orm:persistence-unit-defaults>
       <orm:delimited-identifiers/>
@@ -8,6 +8,7 @@
   <orm:access>FIELD</orm:access>
   <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Book" name="library_Book">
     <orm:table name="library_Book"/>
+    <orm:inheritance strategy="JOINED"/>
     <orm:attributes>
       <orm:basic name="title">
         <orm:column name="title"/>
@@ -20,7 +21,7 @@
         <orm:enumerated>ORDINAL</orm:enumerated>
       </orm:basic>
       <orm:many-to-one name="author" optional="false">
-        <orm:join-column name="author"/>
+        <orm:join-column name="library_Book_author"/>
         <orm:cascade>
           <orm:cascade-persist/>
           <orm:cascade-merge/>
@@ -31,14 +32,15 @@
   </orm:entity>
   <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Writer" name="library_Writer">
     <orm:table name="library_Writer"/>
+    <orm:inheritance strategy="JOINED"/>
     <orm:attributes>
       <orm:basic name="name">
         <orm:column name="name"/>
       </orm:basic>
       <orm:one-to-many name="books">
         <orm:join-table name="library_Writer_books">
-          <orm:join-column name="library_Writer_id"/>
-          <orm:inverse-join-column name="library_Book_id"/>
+          <orm:join-column name="library_Writer_books"/>
+          <orm:inverse-join-column name="books_library_Book"/>
         </orm:join-table>
         <orm:cascade>
           <orm:cascade-persist/>
@@ -50,18 +52,19 @@
   </orm:entity>
   <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Library" name="library_Library">
     <orm:table name="library_Library"/>
+    <orm:inheritance strategy="JOINED"/>
     <orm:attributes>
       <orm:basic name="name">
         <orm:column name="name"/>
       </orm:basic>
       <orm:one-to-many name="writers">
-        <orm:join-column name="library_Library_id"/>
+        <orm:join-column name="library_Library_writers"/>
         <orm:cascade>
           <orm:cascade-all/>
         </orm:cascade>
       </orm:one-to-many>
       <orm:one-to-many name="books">
-        <orm:join-column name="library_Library_id"/>
+        <orm:join-column name="library_Library_books"/>
         <orm:cascade>
           <orm:cascade-all/>
         </orm:cascade>

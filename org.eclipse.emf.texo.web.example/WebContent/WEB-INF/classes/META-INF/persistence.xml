@@ -12,7 +12,6 @@
 		<class>org.eclipse.emf.texo.test.model.samples.library.Library</class>
 		<class>org.eclipse.emf.texo.test.model.samples.library.Book</class>
 		<class>org.eclipse.emf.texo.test.model.samples.library.Writer</class>
-
 		<properties>
             <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
