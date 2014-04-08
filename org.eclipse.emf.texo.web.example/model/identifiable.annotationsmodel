@@ -5,6 +5,9 @@
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
       <eClass href="identifiable.ecore#//Identifiable"/>
       <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity>
+          <discriminatorColumn length="100" name="Test"/>
+        </entity>
         <mappedSuperclass access="FIELD" class=""/>
       </eClassAnnotations>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">

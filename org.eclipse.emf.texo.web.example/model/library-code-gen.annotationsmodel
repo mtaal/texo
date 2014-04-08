@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:modelannotations="http://www.eclipse.org/emf/texo/modelgenerator/modelannotations">
+  <annotatedEPackages>
+    <ePackage href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#/"/>
+    <ePackageAnnotations xsi:type="modelannotations:EPackageModelGenAnnotation" name="library" packagePath="org.eclipse.emf.texo.test.model.samples.library" modelClassesPackagePath="org.eclipse.emf.texo.test.model.samples.library" qualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.LibraryModelPackage" simpleClassName="LibraryModelPackage" simpleModelFactoryClassName="LibraryModelFactory" ecoreFileName="library.ecore" daoClassesPackagePath="org.eclipse.emf.texo.test.model.samples.library.dao" daoRootClass="org.eclipse.emf.texo.server.store.BaseDao"/>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book"/>
+      <eClassAnnotations xsi:type="modelannotations:EClassModelGenAnnotation" name="Book" qualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.Book" simpleClassName="Book" generateCode="true" ownerEPackageAnnotation="//@annotatedEPackages.0/@ePackageAnnotations.0" hasSuperEClass="true" serializable="false" abstract="false" daoQualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.dao.BookDao">
+        <classExtends>org.eclipse.emf.texo.test.model.base.identifiable.Identifiable</classExtends>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/title"/>
+        <eAttributeAnnotations xsi:type="modelannotations:EAttributeModelGenAnnotation" name="title" getter="getTitle" defaultValue="null" setter="setTitle" validJavaMemberName="title" useList="false" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.0/@eClassAnnotations.0"/>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/pages"/>
+        <eAttributeAnnotations xsi:type="modelannotations:EAttributeModelGenAnnotation" name="pages" getter="getPages" defaultValue="100" setter="setPages" validJavaMemberName="pages" useList="false" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.0/@eClassAnnotations.0"/>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/category"/>
+        <eAttributeAnnotations xsi:type="modelannotations:EAttributeModelGenAnnotation" name="category" getter="getCategory" defaultValue="org.eclipse.emf.texo.test.model.samples.library.BookCategory.SCIENCEFICTION" setter="setCategory" validJavaMemberName="category" useList="false" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.0/@eClassAnnotations.0"/>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/author"/>
+        <eReferenceAnnotations xsi:type="modelannotations:EReferenceModelGenAnnotation" name="author" getter="getAuthor" defaultValue="null" setter="setAuthor" validJavaMemberName="author" useList="false" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.0/@eClassAnnotations.0" generateSafeManyAccess="false" generateBidirectionalAssociationSupport="true"/>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEEnum">
+      <eEnum href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory"/>
+      <eEnumAnnotations xsi:type="modelannotations:EEnumModelGenAnnotation" name="BookCategory" qualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.BookCategory" simpleClassName="BookCategory" generateCode="true" ownerEPackageAnnotation="//@annotatedEPackages.0/@ePackageAnnotations.0" enum="true" dateType="false" automaticStringConversion="false"/>
+      <annotatedEEnumLiterals>
+        <eEnumLiteral href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory/Mystery"/>
+      </annotatedEEnumLiterals>
+      <annotatedEEnumLiterals>
+        <eEnumLiteral href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory/ScienceFiction"/>
+      </annotatedEEnumLiterals>
+      <annotatedEEnumLiterals>
+        <eEnumLiteral href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory/Biography"/>
+      </annotatedEEnumLiterals>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Writer"/>
+      <eClassAnnotations xsi:type="modelannotations:EClassModelGenAnnotation" name="Writer" qualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.Writer" simpleClassName="Writer" generateCode="true" ownerEPackageAnnotation="//@annotatedEPackages.0/@ePackageAnnotations.0" hasManyFeatures="true" hasSuperEClass="true" serializable="false" abstract="false" daoQualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.dao.WriterDao">
+        <classExtends>org.eclipse.emf.texo.test.model.base.identifiable.Identifiable</classExtends>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Writer/name"/>
+        <eAttributeAnnotations xsi:type="modelannotations:EAttributeModelGenAnnotation" name="name" getter="getName" defaultValue="null" setter="setName" validJavaMemberName="name" useList="false" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.2/@eClassAnnotations.0"/>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Writer/books"/>
+        <eReferenceAnnotations xsi:type="modelannotations:EReferenceModelGenAnnotation" name="books" getter="getBooks" defaultValue="new java.util.ArrayList&lt;org.eclipse.emf.texo.test.model.samples.library.Book>()" setter="setBooks" validJavaMemberName="books" useList="true" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.2/@eClassAnnotations.0" generateSafeManyAccess="false" generateBidirectionalAssociationSupport="true"/>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library"/>
+      <eClassAnnotations xsi:type="modelannotations:EClassModelGenAnnotation" name="Library" qualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.Library" simpleClassName="Library" generateCode="true" ownerEPackageAnnotation="//@annotatedEPackages.0/@ePackageAnnotations.0" hasManyFeatures="true" hasSuperEClass="true" serializable="false" abstract="false" daoQualifiedClassName="org.eclipse.emf.texo.test.model.samples.library.dao.LibraryDao">
+        <classExtends>org.eclipse.emf.texo.test.model.base.identifiable.Identifiable</classExtends>
+      </eClassAnnotations>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
+        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library/name"/>
+        <eAttributeAnnotations xsi:type="modelannotations:EAttributeModelGenAnnotation" name="name" getter="getName" defaultValue="null" setter="setName" validJavaMemberName="name" useList="false" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.3/@eClassAnnotations.0"/>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library/writers"/>
+        <eReferenceAnnotations xsi:type="modelannotations:EReferenceModelGenAnnotation" name="writers" getter="getWriters" defaultValue="new java.util.ArrayList&lt;org.eclipse.emf.texo.test.model.samples.library.Writer>()" setter="setWriters" validJavaMemberName="writers" useList="true" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.3/@eClassAnnotations.0" generateSafeManyAccess="false" generateBidirectionalAssociationSupport="true"/>
+      </annotatedEStructuralFeatures>
+      <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
+        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library/books"/>
+        <eReferenceAnnotations xsi:type="modelannotations:EReferenceModelGenAnnotation" name="books" getter="getBooks" defaultValue="new java.util.ArrayList&lt;org.eclipse.emf.texo.test.model.samples.library.Book>()" setter="setBooks" validJavaMemberName="books" useList="true" ownerEClassAnnotation="//@annotatedEPackages.0/@annotatedEClassifiers.3/@eClassAnnotations.0" generateSafeManyAccess="false" generateBidirectionalAssociationSupport="true"/>
+      </annotatedEStructuralFeatures>
+    </annotatedEClassifiers>
+  </annotatedEPackages>
+</annotationsmodel:AnnotatedModel>

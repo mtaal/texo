@@ -1,0 +1,8 @@
+package org.eclipse.emf.texo.samples.sport.competition
+
+import org.eclipse.emf.texo.samples.sport.club.Team
+
+class Competition {
+	String name
+	refers Team[] team
+}

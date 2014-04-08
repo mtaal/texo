@@ -1,0 +1,6 @@
+package org.eclipse.emf.texo.samples.sport.society
+
+class Society extends Identifiable
+{
+	String name
+}

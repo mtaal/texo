@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:ormannotations="http://www.eclipse.org/emf/texo/orm/ormannotations">
+  <annotatedEPackages>
+    <ePackage href="travel.xcore#/EPackage"/>
+    <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
+      <eClass href="travel.xcore#/EPackage/Journey"/>
+      <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
+        <entity name="Reis"/>
+      </eClassAnnotations>
+    </annotatedEClassifiers>
+  </annotatedEPackages>
+</annotationsmodel:AnnotatedModel>

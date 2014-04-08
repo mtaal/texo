@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="travel" nsURI="org.eclipse.emf.texo.test.model.samples.travel"
+    nsPrefix="travel">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="basePackage" value="org.eclipse.emf.texo.test.model.samples"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Journey">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trips" upperBound="-1"
+        eType="#//Trip" containment="true" resolveProxies="false">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="trips"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trip">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name2" unique="false" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name2"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//City">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="destination"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="City">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reis" unique="false" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="org.eclipse.emf.texo">
+        <details key="java.member" value="reis"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,27 @@
+package org.eclipse.emf.texo.samples.sport.club
+
+import org.eclipse.emf.texo.samples.sport.society.Society
+
+class Club extends Society
+{
+	contains Team[] teams
+} 
+
+class Team
+{
+	String name
+	refers Member[] member
+} 
+
+class Member 
+{
+	String name
+	String lastName
+	int age
+	Gender gender
+} 
+
+enum Gender 
+{
+	male, female
+}
