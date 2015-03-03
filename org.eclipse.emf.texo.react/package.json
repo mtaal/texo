@@ -1,0 +1,83 @@
+{
+  "name": "org.eclipse.emf.texo.react",
+  "version": "1.0.0",
+  "description": "Test React and Node.js",
+  "author": "",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "eslint": "^0.15.1",
+    "eslint-plugin-react": "^1.4.0",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.5.0",
+    "gulp-jsxcs": "^0.1.8",
+    "gulp-notify": "^2.2.0",
+    "jest-cli": "^0.4.0",
+    "react-addons": "^0.9.1-deprecated",
+    "react-tools": "^0.12.2",
+    "reactify": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.4.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "rootDir": "source",
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  },
+  "jscsConfig": {
+    "requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch", "case", "default"],
+    "requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
+    "requireParenthesesAroundIIFE": true,
+    "requireSpacesInFunctionExpression": { "beforeOpeningCurlyBrace": true },
+    "disallowSpacesInFunctionExpression": { "beforeOpeningRoundBrace": true },
+    "requireMultipleVarDecl": true,
+    "disallowEmptyBlocks": true,
+    "disallowSpacesInsideObjectBrackets": true,
+    "disallowSpacesInsideArrayBrackets": true,
+    "disallowSpacesInsideParentheses": true,
+    "disallowQuotedKeysInObjects": "allButReserved",
+    "requireCommaBeforeLineBreak": true,
+    "requireOperatorBeforeLineBreak": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+    "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
+    "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+    "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
+    "requireSpaceAfterBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
+    "disallowKeywords": ["with"],
+    "disallowMultipleLineBreaks": true,
+    "validateLineBreaks": "LF",
+    "validateQuoteMarks": "\"",
+    "disallowMixedSpacesAndTabs": true,
+    "disallowTrailingWhitespace": true,
+    "disallowKeywordsOnNewLine": ["else"],
+    "requireLineFeedAtFileEnd": true,
+    "maximumLineLength": 120,
+    "requireCapitalizedConstructors": true,
+    "requireDotNotation": true,
+    "excludeFiles": ["node_modules/**"]
+  },
+  "eslintConfig": {
+    "plugins": [
+      "react"
+    ],
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "globals": {
+      "require": true,
+      "document": true,
+      "module": true
+    },
+    "rules": {
+      "global-strict": [
+        2,
+        "always"
+      ]
+    }
+  }
+}
