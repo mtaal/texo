@@ -10,18 +10,15 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.model.ModelResolver;
-import org.eclipse.emf.texo.samples.sport.club.dao.ClubDao;
-import org.eclipse.emf.texo.samples.sport.club.dao.MemberDao;
-import org.eclipse.emf.texo.samples.sport.club.dao.TeamDao;
 import org.eclipse.emf.texo.samples.sport.society.SocietyModelPackage;
-import org.eclipse.emf.texo.server.store.DaoRegistry;
+import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelPackage;
 import org.eclipse.emf.texo.utils.ModelUtils;
 
 /**
  * The <b>Package</b> for the model '<em><b>club</b></em>'. It contains
  * initialization code and access to the Factory to instantiate types of this
  * package.
- * 
+ *
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
@@ -69,14 +66,28 @@ public class ClubModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int CLUB_NAME_FEATURE_ID = 0;
+	public static final int CLUB_DB_ID_FEATURE_ID = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int CLUB_TEAMS_FEATURE_ID = 1;
+	public static final int CLUB_DB_VERSION_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int CLUB_NAME_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int CLUB_TEAMS_FEATURE_ID = 3;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -90,14 +101,28 @@ public class ClubModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int TEAM_NAME_FEATURE_ID = 0;
+	public static final int TEAM_DB_ID_FEATURE_ID = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TEAM_MEMBER_FEATURE_ID = 1;
+	public static final int TEAM_DB_VERSION_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TEAM_NAME_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TEAM_MEMBER_FEATURE_ID = 3;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -111,28 +136,42 @@ public class ClubModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int MEMBER_NAME_FEATURE_ID = 0;
+	public static final int MEMBER_DB_ID_FEATURE_ID = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int MEMBER_LASTNAME_FEATURE_ID = 1;
+	public static final int MEMBER_DB_VERSION_FEATURE_ID = 1;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int MEMBER_AGE_FEATURE_ID = 2;
+	public static final int MEMBER_NAME_FEATURE_ID = 2;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int MEMBER_GENDER_FEATURE_ID = 3;
+	public static final int MEMBER_LASTNAME_FEATURE_ID = 3;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int MEMBER_AGE_FEATURE_ID = 4;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int MEMBER_GENDER_FEATURE_ID = 5;
 
 	/**
 	 * The static member with the instance of this {@link ModelPackage}. <!--
@@ -145,9 +184,9 @@ public class ClubModelPackage extends ModelPackage {
 	/**
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return an initialized instance of this class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ClubModelPackage initialize() {
@@ -169,6 +208,7 @@ public class ClubModelPackage extends ModelPackage {
 		isInitialized = true;
 
 		SocietyModelPackage.initialize();
+		IdentifiableModelPackage.initialize();
 
 		// force the initialization of the EFactory proxy
 		modelPackage.getEPackage();
@@ -183,10 +223,6 @@ public class ClubModelPackage extends ModelPackage {
 
 		ModelResolver.getInstance().registerClassModelMapping(Gender.class,
 				modelPackage.getGenderEEnum(), modelPackage);
-
-		DaoRegistry.getInstance().registerDao(Club.class, ClubDao.class);
-		DaoRegistry.getInstance().registerDao(Team.class, TeamDao.class);
-		DaoRegistry.getInstance().registerDao(Member.class, MemberDao.class);
 
 		// and return ourselves
 		return modelPackage;
@@ -207,7 +243,7 @@ public class ClubModelPackage extends ModelPackage {
 	/**
 	 * Returns the nsUri of the {@link EPackage} managed by this Package
 	 * instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the nsUri of the EPackage
 	 * @generated
 	 */

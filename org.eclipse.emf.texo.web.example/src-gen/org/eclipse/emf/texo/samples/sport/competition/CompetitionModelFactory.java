@@ -5,12 +5,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.AbstractModelFeatureMapEntry;
-import org.eclipse.emf.texo.model.AbstractModelObject;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.ModelObject;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.samples.sport.club.Team;
+import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelFactory;
 
 /**
  * The <b>{@link ModelFactory}</b> for the types of this model: competition. It
@@ -45,7 +45,7 @@ public class CompetitionModelFactory implements ModelFactory {
 	/**
 	 * Wraps an object in a {@link ModelObject}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the object
 	 * @param adaptee
@@ -54,7 +54,7 @@ public class CompetitionModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModelObject createModelObject(EClass eClass, Object adaptee) {
+	public <T> ModelObject<T> createModelObject(EClass eClass, T adaptee) {
 		ModelObject<Object> modelObject = null;
 		switch (eClass.getClassifierID()) {
 		case CompetitionModelPackage.COMPETITION_CLASSIFIER_ID:
@@ -65,7 +65,7 @@ public class CompetitionModelFactory implements ModelFactory {
 					+ "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
-		return modelObject;
+		return (ModelObject<T>) modelObject;
 	}
 
 	/**
@@ -149,19 +149,20 @@ public class CompetitionModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Competition</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class CompetitionModelObject<E extends Competition> extends
-			AbstractModelObject<E> {
+			IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EClass eClass() {
 			return CompetitionModelPackage.INSTANCE.getCompetitionEClass();
 		}
@@ -169,8 +170,17 @@ public class CompetitionModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ModelPackage getModelPackage() {
 			return CompetitionModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return Competition.class;
 		}
 
 		/**
@@ -180,6 +190,10 @@ public class CompetitionModelFactory implements ModelFactory {
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case CompetitionModelPackage.COMPETITION_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case CompetitionModelPackage.COMPETITION_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case CompetitionModelPackage.COMPETITION_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case CompetitionModelPackage.COMPETITION_TEAM_FEATURE_ID:
@@ -218,7 +232,7 @@ public class CompetitionModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case CompetitionModelPackage.COMPETITION_TEAM_FEATURE_ID:
-				return getTarget().addToTeam((Team) value);
+				return getTarget().getTeam().add((Team) value);
 			default:
 				return super.eAddTo(eStructuralFeature, value);
 			}
@@ -234,7 +248,7 @@ public class CompetitionModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case CompetitionModelPackage.COMPETITION_TEAM_FEATURE_ID:
-				return getTarget().removeFromTeam((Team) value);
+				return getTarget().getTeam().remove(value);
 			default:
 				return super.eRemoveFrom(eStructuralFeature, value);
 			}

@@ -9,17 +9,14 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.model.ModelResolver;
-import org.eclipse.emf.texo.server.store.DaoRegistry;
-import org.eclipse.emf.texo.test.model.samples.travel.dao.CityDao;
-import org.eclipse.emf.texo.test.model.samples.travel.dao.JourneyDao;
-import org.eclipse.emf.texo.test.model.samples.travel.dao.TripDao;
+import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelPackage;
 import org.eclipse.emf.texo.utils.ModelUtils;
 
 /**
  * The <b>Package</b> for the model '<em><b>travel</b></em>'. It contains
  * initialization code and access to the Factory to instantiate types of this
  * package.
- * 
+ *
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
@@ -60,14 +57,28 @@ public class TravelModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int JOURNEY_NAME_FEATURE_ID = 0;
+	public static final int JOURNEY_DB_ID_FEATURE_ID = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int JOURNEY_TRIPS_FEATURE_ID = 1;
+	public static final int JOURNEY_DB_VERSION_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int JOURNEY_NAME_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int JOURNEY_TRIPS_FEATURE_ID = 3;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -81,14 +92,28 @@ public class TravelModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int TRIP_NAME2_FEATURE_ID = 0;
+	public static final int TRIP_DB_ID_FEATURE_ID = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int TRIP_DESTINATION_FEATURE_ID = 1;
+	public static final int TRIP_DB_VERSION_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TRIP_NAME2_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int TRIP_DESTINATION_FEATURE_ID = 3;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -102,14 +127,28 @@ public class TravelModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int CITY_NAME_FEATURE_ID = 0;
+	public static final int CITY_DB_ID_FEATURE_ID = 0;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public static final int CITY_REIS_FEATURE_ID = 1;
+	public static final int CITY_DB_VERSION_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int CITY_NAME_FEATURE_ID = 2;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int CITY_REIS_FEATURE_ID = 3;
 
 	/**
 	 * The static member with the instance of this {@link ModelPackage}. <!--
@@ -122,9 +161,9 @@ public class TravelModelPackage extends ModelPackage {
 	/**
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return an initialized instance of this class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static TravelModelPackage initialize() {
@@ -145,6 +184,8 @@ public class TravelModelPackage extends ModelPackage {
 
 		isInitialized = true;
 
+		IdentifiableModelPackage.initialize();
+
 		// force the initialization of the EFactory proxy
 		modelPackage.getEPackage();
 
@@ -155,10 +196,6 @@ public class TravelModelPackage extends ModelPackage {
 				modelPackage.getTripEClass(), modelPackage);
 		ModelResolver.getInstance().registerClassModelMapping(City.class,
 				modelPackage.getCityEClass(), modelPackage);
-
-		DaoRegistry.getInstance().registerDao(Journey.class, JourneyDao.class);
-		DaoRegistry.getInstance().registerDao(Trip.class, TripDao.class);
-		DaoRegistry.getInstance().registerDao(City.class, CityDao.class);
 
 		// and return ourselves
 		return modelPackage;
@@ -179,7 +216,7 @@ public class TravelModelPackage extends ModelPackage {
 	/**
 	 * Returns the nsUri of the {@link EPackage} managed by this Package
 	 * instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the nsUri of the EPackage
 	 * @generated
 	 */

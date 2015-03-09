@@ -5,12 +5,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.AbstractModelFeatureMapEntry;
-import org.eclipse.emf.texo.model.AbstractModelObject;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.ModelObject;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.samples.sport.society.SocietyModelFactory;
+import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelFactory;
 
 /**
  * The <b>{@link ModelFactory}</b> for the types of this model: club. It
@@ -49,7 +49,7 @@ public class ClubModelFactory implements ModelFactory {
 	/**
 	 * Wraps an object in a {@link ModelObject}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the object
 	 * @param adaptee
@@ -58,7 +58,7 @@ public class ClubModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModelObject createModelObject(EClass eClass, Object adaptee) {
+	public <T> ModelObject<T> createModelObject(EClass eClass, T adaptee) {
 		ModelObject<Object> modelObject = null;
 		switch (eClass.getClassifierID()) {
 		case ClubModelPackage.CLUB_CLASSIFIER_ID:
@@ -75,7 +75,7 @@ public class ClubModelFactory implements ModelFactory {
 					+ "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
-		return modelObject;
+		return (ModelObject<T>) modelObject;
 	}
 
 	/**
@@ -216,12 +216,12 @@ public class ClubModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Club</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class ClubModelObject<E extends Club> extends
@@ -246,9 +246,21 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Club.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case ClubModelPackage.CLUB_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case ClubModelPackage.CLUB_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case ClubModelPackage.CLUB_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case ClubModelPackage.CLUB_TEAMS_FEATURE_ID:
@@ -266,9 +278,6 @@ public class ClubModelFactory implements ModelFactory {
 		public void eSet(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
-			case ClubModelPackage.CLUB_NAME_FEATURE_ID:
-				getTarget().setName((String) value);
-				return;
 			case ClubModelPackage.CLUB_TEAMS_FEATURE_ID:
 				getTarget().setTeams((List<Team>) value);
 				return;
@@ -287,7 +296,7 @@ public class ClubModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case ClubModelPackage.CLUB_TEAMS_FEATURE_ID:
-				return getTarget().addToTeams((Team) value);
+				return getTarget().getTeams().add((Team) value);
 			default:
 				return super.eAddTo(eStructuralFeature, value);
 			}
@@ -303,7 +312,7 @@ public class ClubModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case ClubModelPackage.CLUB_TEAMS_FEATURE_ID:
-				return getTarget().removeFromTeams((Team) value);
+				return getTarget().getTeams().remove(value);
 			default:
 				return super.eRemoveFrom(eStructuralFeature, value);
 			}
@@ -312,19 +321,20 @@ public class ClubModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Team</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class TeamModelObject<E extends Team> extends
-			AbstractModelObject<E> {
+			IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EClass eClass() {
 			return ClubModelPackage.INSTANCE.getTeamEClass();
 		}
@@ -332,8 +342,17 @@ public class ClubModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ModelPackage getModelPackage() {
 			return ClubModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return Team.class;
 		}
 
 		/**
@@ -343,6 +362,10 @@ public class ClubModelFactory implements ModelFactory {
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case ClubModelPackage.TEAM_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case ClubModelPackage.TEAM_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case ClubModelPackage.TEAM_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case ClubModelPackage.TEAM_MEMBER_FEATURE_ID:
@@ -381,7 +404,7 @@ public class ClubModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case ClubModelPackage.TEAM_MEMBER_FEATURE_ID:
-				return getTarget().addToMember((Member) value);
+				return getTarget().getMember().add((Member) value);
 			default:
 				return super.eAddTo(eStructuralFeature, value);
 			}
@@ -397,7 +420,7 @@ public class ClubModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case ClubModelPackage.TEAM_MEMBER_FEATURE_ID:
-				return getTarget().removeFromMember((Member) value);
+				return getTarget().getMember().remove(value);
 			default:
 				return super.eRemoveFrom(eStructuralFeature, value);
 			}
@@ -406,19 +429,20 @@ public class ClubModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Member</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class MemberModelObject<E extends Member> extends
-			AbstractModelObject<E> {
+			IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EClass eClass() {
 			return ClubModelPackage.INSTANCE.getMemberEClass();
 		}
@@ -426,8 +450,17 @@ public class ClubModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ModelPackage getModelPackage() {
 			return ClubModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return Member.class;
 		}
 
 		/**
@@ -437,6 +470,10 @@ public class ClubModelFactory implements ModelFactory {
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case ClubModelPackage.MEMBER_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case ClubModelPackage.MEMBER_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case ClubModelPackage.MEMBER_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case ClubModelPackage.MEMBER_LASTNAME_FEATURE_ID:

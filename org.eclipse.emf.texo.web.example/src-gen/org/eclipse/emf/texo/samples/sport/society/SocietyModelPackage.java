@@ -8,15 +8,14 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.model.ModelResolver;
-import org.eclipse.emf.texo.samples.sport.society.dao.SocietyDao;
-import org.eclipse.emf.texo.server.store.DaoRegistry;
+import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelPackage;
 import org.eclipse.emf.texo.utils.ModelUtils;
 
 /**
  * The <b>Package</b> for the model '<em><b>society</b></em>'. It contains
  * initialization code and access to the Factory to instantiate types of this
  * package.
- * 
+ *
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
@@ -57,7 +56,21 @@ public class SocietyModelPackage extends ModelPackage {
 	 * 
 	 * @generated
 	 */
-	public static final int SOCIETY_NAME_FEATURE_ID = 0;
+	public static final int SOCIETY_DB_ID_FEATURE_ID = 0;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int SOCIETY_DB_VERSION_FEATURE_ID = 1;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final int SOCIETY_NAME_FEATURE_ID = 2;
 
 	/**
 	 * The static member with the instance of this {@link ModelPackage}. <!--
@@ -70,9 +83,9 @@ public class SocietyModelPackage extends ModelPackage {
 	/**
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return an initialized instance of this class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SocietyModelPackage initialize() {
@@ -93,14 +106,14 @@ public class SocietyModelPackage extends ModelPackage {
 
 		isInitialized = true;
 
+		IdentifiableModelPackage.initialize();
+
 		// force the initialization of the EFactory proxy
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
 		ModelResolver.getInstance().registerClassModelMapping(Society.class,
 				modelPackage.getSocietyEClass(), modelPackage);
-
-		DaoRegistry.getInstance().registerDao(Society.class, SocietyDao.class);
 
 		// and return ourselves
 		return modelPackage;
@@ -121,7 +134,7 @@ public class SocietyModelPackage extends ModelPackage {
 	/**
 	 * Returns the nsUri of the {@link EPackage} managed by this Package
 	 * instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the nsUri of the EPackage
 	 * @generated
 	 */

@@ -2,6 +2,7 @@ package org.eclipse.emf.texo.samples.sport.society;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>Society</b></em>'. <!--
@@ -10,7 +11,7 @@ import javax.persistence.Entity;
  * @generated
  */
 @Entity(name = "society_Society")
-public class Society {
+public class Society extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -22,7 +23,7 @@ public class Society {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -34,7 +35,7 @@ public class Society {
 
 	/**
 	 * Sets the '{@link Society#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName
@@ -53,6 +54,7 @@ public class Society {
 	 */
 	@Override
 	public String toString() {
-		return "Society " + " [name: " + getName() + "]";
+		return "Society " + " [name: " + getName() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

@@ -13,7 +13,6 @@
         defaultValueLiteral="ScienceFiction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
         eType="#//Writer" eOpposite="#//Writer/books"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="test" eType="ecore:EClass travel.xcore#/EPackage/Journey"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="identifiable.ecore#//Identifiable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

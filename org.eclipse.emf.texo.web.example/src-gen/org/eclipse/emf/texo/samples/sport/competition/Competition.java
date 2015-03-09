@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import org.eclipse.emf.texo.samples.sport.club.Team;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>Competition</b></em>'. <!--
@@ -15,7 +16,7 @@ import org.eclipse.emf.texo.samples.sport.club.Team;
  * @generated
  */
 @Entity(name = "competition_Competition")
-public class Competition {
+public class Competition extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -36,7 +37,7 @@ public class Competition {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -48,7 +49,7 @@ public class Competition {
 
 	/**
 	 * Sets the '{@link Competition#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName
@@ -62,7 +63,7 @@ public class Competition {
 
 	/**
 	 * Returns the value of '<em><b>team</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>team</b></em>' feature
@@ -73,54 +74,8 @@ public class Competition {
 	}
 
 	/**
-	 * Adds to the <em>team</em> feature.
-	 * 
-	 * @param teamValue
-	 *            the value to add
-	 * @return true if the value is added to the collection (it was not yet
-	 *         present in the collection), false otherwise
-	 * @generated
-	 */
-	public boolean addToTeam(Team teamValue) {
-		if (!team.contains(teamValue)) {
-			boolean result = team.add(teamValue);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Removes from the <em>team</em> feature.
-	 * 
-	 * @param teamValue
-	 *            the value to remove
-	 * @return true if the value is removed from the collection (it existed in
-	 *         the collection before removing), false otherwise
-	 * 
-	 * @generated
-	 */
-	public boolean removeFromTeam(Team teamValue) {
-		if (team.contains(teamValue)) {
-			boolean result = team.remove(teamValue);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Clears the <em>team</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void clearTeam() {
-		while (!team.isEmpty()) {
-			removeFromTeam(team.iterator().next());
-		}
-	}
-
-	/**
 	 * Sets the '{@link Competition#getTeam() <em>team</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newTeam
@@ -140,6 +95,7 @@ public class Competition {
 	 */
 	@Override
 	public String toString() {
-		return "Competition " + " [name: " + getName() + "]";
+		return "Competition " + " [name: " + getName() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

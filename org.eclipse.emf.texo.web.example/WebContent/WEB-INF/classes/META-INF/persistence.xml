@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="library-derby2">
+	<persistence-unit name="texo-derby">
 	
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<!-- mapping-file>META-INF/identifiable-orm.xml</mapping-file-->
@@ -12,6 +12,15 @@
 		<class>org.eclipse.emf.texo.test.model.samples.library.Library</class>
 		<class>org.eclipse.emf.texo.test.model.samples.library.Book</class>
 		<class>org.eclipse.emf.texo.test.model.samples.library.Writer</class>
+		<class>org.eclipse.emf.texo.test.model.samples.library.Writer</class>
+		<class>org.eclipse.emf.texo.test.model.samples.travel.City</class>
+		<class>org.eclipse.emf.texo.test.model.samples.travel.Journey</class>
+		<class>org.eclipse.emf.texo.test.model.samples.travel.Trip</class>
+		<class>org.eclipse.emf.texo.samples.sport.club.Club</class>
+		<class>org.eclipse.emf.texo.samples.sport.club.Member</class>
+		<class>org.eclipse.emf.texo.samples.sport.club.Team</class>
+		<class>org.eclipse.emf.texo.samples.sport.competition.Competition</class>
+		<class>org.eclipse.emf.texo.samples.sport.society.Society</class>
 		<properties>
             <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
@@ -24,11 +33,14 @@
 
 	</persistence-unit>
 
-	<persistence-unit name="library-hsqldb">
+	<persistence-unit name="texo-hsqldb">
 	
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<mapping-file>META-INF/identifiable-orm.xml</mapping-file>
 		<mapping-file>META-INF/library-orm.xml</mapping-file>
+		<mapping-file>META-INF/sport-competition-orm.xml</mapping-file>
+		<mapping-file>META-INF/sport-society-orm.xml</mapping-file>
+		<mapping-file>META-INF/sport-orm.xml</mapping-file>
 		<properties>
             <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.HSQLPlatform"/>
             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
@@ -44,11 +56,14 @@
 
 	</persistence-unit>
 	
-	<persistence-unit name="library-mysql">
+	<persistence-unit name="texo-mysql">
 	
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<mapping-file>META-INF/identifiable-orm.xml</mapping-file>
 		<mapping-file>META-INF/library-orm.xml</mapping-file>
+		<mapping-file>META-INF/sport-competition-orm.xml</mapping-file>
+		<mapping-file>META-INF/sport-society-orm.xml</mapping-file>
+		<mapping-file>META-INF/sport-orm.xml</mapping-file>
 		<properties>
             <property name="eclipselink.target-database" value="Mysql"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

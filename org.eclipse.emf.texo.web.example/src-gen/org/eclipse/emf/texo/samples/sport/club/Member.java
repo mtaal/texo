@@ -4,6 +4,7 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>Member</b></em>'. <!--
@@ -12,7 +13,7 @@ import javax.persistence.Enumerated;
  * @generated
  */
 @Entity(name = "club_Member")
-public class Member {
+public class Member extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -49,7 +50,7 @@ public class Member {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -61,7 +62,7 @@ public class Member {
 
 	/**
 	 * Sets the '{@link Member#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName
@@ -74,7 +75,7 @@ public class Member {
 
 	/**
 	 * Returns the value of '<em><b>lastName</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>lastName</b></em>' feature
@@ -86,7 +87,7 @@ public class Member {
 
 	/**
 	 * Sets the '{@link Member#getLastName() <em>lastName</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newLastName
@@ -100,7 +101,7 @@ public class Member {
 
 	/**
 	 * Returns the value of '<em><b>age</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>age</b></em>' feature
@@ -112,7 +113,7 @@ public class Member {
 
 	/**
 	 * Sets the '{@link Member#getAge() <em>age</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newAge
@@ -125,7 +126,7 @@ public class Member {
 
 	/**
 	 * Returns the value of '<em><b>gender</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>gender</b></em>' feature
@@ -137,7 +138,7 @@ public class Member {
 
 	/**
 	 * Sets the '{@link Member#getGender() <em>gender</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newGender
@@ -159,6 +160,7 @@ public class Member {
 	public String toString() {
 		return "Member " + " [name: " + getName() + "]" + " [lastName: "
 				+ getLastName() + "]" + " [age: " + getAge() + "]"
-				+ " [gender: " + getGender() + "]";
+				+ " [gender: " + getGender() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

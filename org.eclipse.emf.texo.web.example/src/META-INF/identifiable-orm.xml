@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<orm:entity-mappings xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+  <orm:persistence-unit-metadata>
+    <orm:persistence-unit-defaults>
+      <orm:delimited-identifiers/>
+    </orm:persistence-unit-defaults>
+  </orm:persistence-unit-metadata>
+  <orm:access>FIELD</orm:access>
+  <orm:mapped-superclass access="FIELD" class="org.eclipse.emf.texo.test.model.base.identifiable.Identifiable">
+    <orm:attributes>
+      <orm:id name="db_Id">
+        <orm:generated-value strategy="AUTO"/>
+      </orm:id>
+      <orm:version access="FIELD" name="db_version">
+        <orm:convert></orm:convert>
+      </orm:version>
+    </orm:attributes>
+  </orm:mapped-superclass>
+</orm:entity-mappings>

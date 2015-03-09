@@ -3,11 +3,6 @@
 	<name>org.eclipse.emf.texo.web.example</name>
 	<comment></comment>
 	<projects>
-		<project>org.eclipse.emf.texo</project>
-		<project>org.eclipse.emf.texo.server</project>
-		<project>org.eclipse.emf.texo.datagenerator</project>
-		<project>org.eclipse.emf.texo.json</project>
-		<project>org.eclipse.emf.texo.xml</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -57,8 +52,8 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
-		<nature>org.eclipse.emf.texo.eclipse.nature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+		<nature>org.eclipse.emf.texo.eclipse.nature</nature>
 	</natures>
 </projectDescription>

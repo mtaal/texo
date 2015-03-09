@@ -1,18 +1,20 @@
 package org.eclipse.emf.texo.test.model.samples.travel
 
-class Journey 
+import identifiable.Identifiable
+
+class Journey extends Identifiable
 {
 	String name
 	contains Trip[] trips
 }
 
-class Trip 
+class Trip extends Identifiable
 {
 	String name2
 	refers City destination
 }
 
-class City 
+class City extends Identifiable
 {
 	String name
 	String reis

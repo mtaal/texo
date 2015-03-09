@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<orm:entity-mappings xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+  <orm:persistence-unit-metadata>
+    <orm:persistence-unit-defaults>
+      <orm:delimited-identifiers/>
+    </orm:persistence-unit-defaults>
+  </orm:persistence-unit-metadata>
+  <orm:access>FIELD</orm:access>
+  <orm:entity class="org.eclipse.emf.texo.samples.sport.society.Society" name="society_Society">
+    <orm:attributes>
+      <orm:basic name="name"/>
+    </orm:attributes>
+  </orm:entity>
+</orm:entity-mappings>

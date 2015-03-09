@@ -5,11 +5,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.AbstractModelFeatureMapEntry;
-import org.eclipse.emf.texo.model.AbstractModelObject;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.ModelObject;
 import org.eclipse.emf.texo.model.ModelPackage;
+import org.eclipse.emf.texo.test.model.base.identifiable.IdentifiableModelFactory;
 
 /**
  * The <b>{@link ModelFactory}</b> for the types of this model: travel. It
@@ -48,7 +48,7 @@ public class TravelModelFactory implements ModelFactory {
 	/**
 	 * Wraps an object in a {@link ModelObject}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the object
 	 * @param adaptee
@@ -57,7 +57,7 @@ public class TravelModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModelObject createModelObject(EClass eClass, Object adaptee) {
+	public <T> ModelObject<T> createModelObject(EClass eClass, T adaptee) {
 		ModelObject<Object> modelObject = null;
 		switch (eClass.getClassifierID()) {
 		case TravelModelPackage.JOURNEY_CLASSIFIER_ID:
@@ -74,7 +74,7 @@ public class TravelModelFactory implements ModelFactory {
 					+ "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
-		return modelObject;
+		return (ModelObject<T>) modelObject;
 	}
 
 	/**
@@ -177,19 +177,20 @@ public class TravelModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Journey</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class JourneyModelObject<E extends Journey> extends
-			AbstractModelObject<E> {
+			IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EClass eClass() {
 			return TravelModelPackage.INSTANCE.getJourneyEClass();
 		}
@@ -197,8 +198,17 @@ public class TravelModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ModelPackage getModelPackage() {
 			return TravelModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return Journey.class;
 		}
 
 		/**
@@ -208,6 +218,10 @@ public class TravelModelFactory implements ModelFactory {
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case TravelModelPackage.JOURNEY_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case TravelModelPackage.JOURNEY_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case TravelModelPackage.JOURNEY_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case TravelModelPackage.JOURNEY_TRIPS_FEATURE_ID:
@@ -246,7 +260,7 @@ public class TravelModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case TravelModelPackage.JOURNEY_TRIPS_FEATURE_ID:
-				return getTarget().addToTrips((Trip) value);
+				return getTarget().getTrips().add((Trip) value);
 			default:
 				return super.eAddTo(eStructuralFeature, value);
 			}
@@ -262,7 +276,7 @@ public class TravelModelFactory implements ModelFactory {
 			switch (featureID) {
 
 			case TravelModelPackage.JOURNEY_TRIPS_FEATURE_ID:
-				return getTarget().removeFromTrips((Trip) value);
+				return getTarget().getTrips().remove(value);
 			default:
 				return super.eRemoveFrom(eStructuralFeature, value);
 			}
@@ -271,19 +285,20 @@ public class TravelModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Trip</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class TripModelObject<E extends Trip> extends
-			AbstractModelObject<E> {
+			IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EClass eClass() {
 			return TravelModelPackage.INSTANCE.getTripEClass();
 		}
@@ -291,8 +306,17 @@ public class TravelModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ModelPackage getModelPackage() {
 			return TravelModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return Trip.class;
 		}
 
 		/**
@@ -302,6 +326,10 @@ public class TravelModelFactory implements ModelFactory {
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case TravelModelPackage.TRIP_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case TravelModelPackage.TRIP_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case TravelModelPackage.TRIP_NAME2_FEATURE_ID:
 				return getTarget().getName2();
 			case TravelModelPackage.TRIP_DESTINATION_FEATURE_ID:
@@ -360,19 +388,20 @@ public class TravelModelFactory implements ModelFactory {
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>City</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class CityModelObject<E extends City> extends
-			AbstractModelObject<E> {
+			IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EClass eClass() {
 			return TravelModelPackage.INSTANCE.getCityEClass();
 		}
@@ -380,8 +409,17 @@ public class TravelModelFactory implements ModelFactory {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ModelPackage getModelPackage() {
 			return TravelModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return City.class;
 		}
 
 		/**
@@ -391,6 +429,10 @@ public class TravelModelFactory implements ModelFactory {
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case TravelModelPackage.CITY_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case TravelModelPackage.CITY_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case TravelModelPackage.CITY_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case TravelModelPackage.CITY_REIS_FEATURE_ID:

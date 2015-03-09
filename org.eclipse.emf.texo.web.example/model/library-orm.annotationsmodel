@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <annotationsmodel:AnnotatedModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotationsmodel="http://www.eclipse.org/emf/texo/annotations/model" xmlns:ormannotations="http://www.eclipse.org/emf/texo/orm/ormannotations">
   <annotatedEPackages>
-    <ePackage href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#/"/>
+    <ePackage href="library.ecore#/"/>
     <ePackageAnnotations xsi:type="ormannotations:EPackageORMAnnotation" generateFullDbSchemaNames="false" maximumSqlNameLength="255" lowerCasedNames="false" upperCasedNames="false" enforceUniqueNames="false" useJoinTablesForContainment="false" useJoinTablesForNonContainment="true" generateJavaAnnotations="false" addOrderColumnToListMappings="false" renameSQLReservedNames="false" uniqueEntityNames="true" setDelimitedIdentifierTagInORM="true"/>
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
-      <eClass href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book"/>
+      <eClass href="library.ecore#//Book"/>
       <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
         <entity class="org.eclipse.emf.texo.test.model.samples.library.Book" name="library_Book"/>
       </eClassAnnotations>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
-        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/title"/>
+        <eAttribute href="library.ecore#//Book/title"/>
         <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
           <basic name="title"/>
         </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
-        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/pages"/>
+        <eAttribute href="library.ecore#//Book/pages"/>
         <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
           <basic name="pages"/>
         </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
-        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/category"/>
+        <eAttribute href="library.ecore#//Book/category"/>
         <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
           <basic enumerated="STRING" name="category"/>
         </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
-        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Book/author"/>
+        <eReference href="library.ecore#//Book/author"/>
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <manyToOne name="author" optional="false">
             <joinColumn/>
@@ -41,31 +41,31 @@
       </annotatedEStructuralFeatures>
     </annotatedEClassifiers>
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEEnum">
-      <eEnum href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory"/>
+      <eEnum href="library.ecore#//BookCategory"/>
       <eEnumAnnotations xsi:type="ormannotations:EEnumORMAnnotation"/>
       <annotatedEEnumLiterals>
-        <eEnumLiteral href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory/Mystery"/>
+        <eEnumLiteral href="library.ecore#//BookCategory/Mystery"/>
       </annotatedEEnumLiterals>
       <annotatedEEnumLiterals>
-        <eEnumLiteral href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory/ScienceFiction"/>
+        <eEnumLiteral href="library.ecore#//BookCategory/ScienceFiction"/>
       </annotatedEEnumLiterals>
       <annotatedEEnumLiterals>
-        <eEnumLiteral href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//BookCategory/Biography"/>
+        <eEnumLiteral href="library.ecore#//BookCategory/Biography"/>
       </annotatedEEnumLiterals>
     </annotatedEClassifiers>
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
-      <eClass href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Writer"/>
+      <eClass href="library.ecore#//Writer"/>
       <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
         <entity class="org.eclipse.emf.texo.test.model.samples.library.Writer" name="library_Writer"/>
       </eClassAnnotations>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
-        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Writer/name"/>
+        <eAttribute href="library.ecore#//Writer/name"/>
         <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
           <basic name="name"/>
         </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
-        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Writer/books"/>
+        <eReference href="library.ecore#//Writer/books"/>
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <oneToMany name="books">
             <joinTable/>
@@ -79,18 +79,18 @@
       </annotatedEStructuralFeatures>
     </annotatedEClassifiers>
     <annotatedEClassifiers xsi:type="annotationsmodel:AnnotatedEClass">
-      <eClass href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library"/>
+      <eClass href="library.ecore#//Library"/>
       <eClassAnnotations xsi:type="ormannotations:EClassORMAnnotation">
-        <entity class="org.eclipse.emf.texo.test.model.samples.library.Library" name="library_Library"/>
+        <entity class="org.eclipse.emf.texo.test.model.samples.library.Library" name="Library"/>
       </eClassAnnotations>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEAttribute">
-        <eAttribute href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library/name"/>
+        <eAttribute href="library.ecore#//Library/name"/>
         <eAttributeAnnotations xsi:type="ormannotations:EAttributeORMAnnotation">
           <basic name="name"/>
         </eAttributeAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
-        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library/writers"/>
+        <eReference href="library.ecore#//Library/writers"/>
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <oneToMany name="writers">
             <cascade>
@@ -100,7 +100,7 @@
         </eReferenceAnnotations>
       </annotatedEStructuralFeatures>
       <annotatedEStructuralFeatures xsi:type="annotationsmodel:AnnotatedEReference">
-        <eReference href="platform:/resource/org.eclipse.emf.texo.web.example/model/library.ecore#//Library/books"/>
+        <eReference href="library.ecore#//Library/books"/>
         <eReferenceAnnotations xsi:type="ormannotations:EReferenceORMAnnotation">
           <oneToMany name="books">
             <cascade>

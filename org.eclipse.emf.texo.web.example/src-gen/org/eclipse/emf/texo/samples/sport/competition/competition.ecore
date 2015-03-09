@@ -5,13 +5,13 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.eclipse.emf.texo.samples.sport"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Competition">
+  <eClassifiers xsi:type="ecore:EClass" name="Competition" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="org.eclipse.emf.texo">
         <details key="java.member" value="name"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="team" upperBound="-1" eType="ecore:EClass org.eclipse.emf.texo.samples.sport.club#/EPackage/Team">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="team" upperBound="-1" eType="ecore:EClass org.eclipse.emf.texo.samples.sport.club#//Team">
       <eAnnotations source="org.eclipse.emf.texo">
         <details key="java.member" value="team"/>
       </eAnnotations>

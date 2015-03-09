@@ -1,0 +1,24 @@
+After downloading this project:
+- create a server in the server tab in Eclipse
+- add the project to it
+- start the server
+- visit the following url:
+http://localhost:8080/org.eclipse.emf.texo.web.example/model
+
+from here you can first generate test data and then go back and by clicking browse types see the generated data.
+
+(note some example models may not work as test data generation can violate unique keys on join tables)
+
+JSONWS:
+For example try this link:
+http://localhost:8080/org.eclipse.emf.texo.web.example/jsonws/City
+
+For more info on json web service urls see here:
+https://wiki.eclipse.org/Texo/JSON_REST_Web_Services#Retrieve_Operation
+
+XMLWS:
+view-source:http://localhost:8080/org.eclipse.emf.texo.web.example/xmlws/City
+
+For more info on xml web service urls see here:
+https://wiki.eclipse.org/Texo/XML_REST_Web_Services
+

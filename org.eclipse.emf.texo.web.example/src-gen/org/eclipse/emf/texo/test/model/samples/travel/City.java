@@ -2,6 +2,7 @@ package org.eclipse.emf.texo.test.model.samples.travel;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>City</b></em>'. <!--
@@ -10,7 +11,7 @@ import javax.persistence.Entity;
  * @generated
  */
 @Entity(name = "travel_City")
-public class City {
+public class City extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -30,7 +31,7 @@ public class City {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -42,7 +43,7 @@ public class City {
 
 	/**
 	 * Sets the '{@link City#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName
@@ -55,7 +56,7 @@ public class City {
 
 	/**
 	 * Returns the value of '<em><b>reis</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>reis</b></em>' feature
@@ -67,7 +68,7 @@ public class City {
 
 	/**
 	 * Sets the '{@link City#getReis() <em>reis</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newReis
@@ -87,6 +88,6 @@ public class City {
 	@Override
 	public String toString() {
 		return "City " + " [name: " + getName() + "]" + " [reis: " + getReis()
-				+ "]";
+				+ "]" + "{extends: " + super.toString() + "} ";
 	}
 }

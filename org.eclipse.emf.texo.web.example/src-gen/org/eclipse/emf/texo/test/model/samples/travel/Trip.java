@@ -4,6 +4,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>Trip</b></em>'. <!--
@@ -12,7 +13,7 @@ import javax.persistence.ManyToOne;
  * @generated
  */
 @Entity(name = "travel_Trip")
-public class Trip {
+public class Trip extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -33,7 +34,7 @@ public class Trip {
 
 	/**
 	 * Returns the value of '<em><b>name2</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name2</b></em>' feature
@@ -45,7 +46,7 @@ public class Trip {
 
 	/**
 	 * Sets the '{@link Trip#getName2() <em>name2</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName2
@@ -58,7 +59,7 @@ public class Trip {
 
 	/**
 	 * Returns the value of '<em><b>destination</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>destination</b></em>' feature
@@ -70,7 +71,7 @@ public class Trip {
 
 	/**
 	 * Sets the '{@link Trip#getDestination() <em>destination</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newDestination
@@ -90,6 +91,7 @@ public class Trip {
 	 */
 	@Override
 	public String toString() {
-		return "Trip " + " [name2: " + getName2() + "]";
+		return "Trip " + " [name2: " + getName2() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

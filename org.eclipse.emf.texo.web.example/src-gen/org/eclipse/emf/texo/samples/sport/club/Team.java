@@ -6,6 +6,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>Team</b></em>'. <!--
@@ -14,7 +15,7 @@ import javax.persistence.ManyToMany;
  * @generated
  */
 @Entity(name = "club_Team")
-public class Team {
+public class Team extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -35,7 +36,7 @@ public class Team {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -47,7 +48,7 @@ public class Team {
 
 	/**
 	 * Sets the '{@link Team#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName
@@ -60,7 +61,7 @@ public class Team {
 
 	/**
 	 * Returns the value of '<em><b>member</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>member</b></em>' feature
@@ -71,54 +72,8 @@ public class Team {
 	}
 
 	/**
-	 * Adds to the <em>member</em> feature.
-	 * 
-	 * @param memberValue
-	 *            the value to add
-	 * @return true if the value is added to the collection (it was not yet
-	 *         present in the collection), false otherwise
-	 * @generated
-	 */
-	public boolean addToMember(Member memberValue) {
-		if (!member.contains(memberValue)) {
-			boolean result = member.add(memberValue);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Removes from the <em>member</em> feature.
-	 * 
-	 * @param memberValue
-	 *            the value to remove
-	 * @return true if the value is removed from the collection (it existed in
-	 *         the collection before removing), false otherwise
-	 * 
-	 * @generated
-	 */
-	public boolean removeFromMember(Member memberValue) {
-		if (member.contains(memberValue)) {
-			boolean result = member.remove(memberValue);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Clears the <em>member</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void clearMember() {
-		while (!member.isEmpty()) {
-			removeFromMember(member.iterator().next());
-		}
-	}
-
-	/**
 	 * Sets the '{@link Team#getMember() <em>member</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newMember
@@ -138,6 +93,7 @@ public class Team {
 	 */
 	@Override
 	public String toString() {
-		return "Team " + " [name: " + getName() + "]";
+		return "Team " + " [name: " + getName() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

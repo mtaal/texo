@@ -6,6 +6,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import org.eclipse.emf.texo.test.model.base.identifiable.Identifiable;
 
 /**
  * A representation of the model object '<em><b>Journey</b></em>'. <!--
@@ -14,7 +15,7 @@ import javax.persistence.OneToMany;
  * @generated
  */
 @Entity(name = "Reis")
-public class Journey {
+public class Journey extends Identifiable {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -34,7 +35,7 @@ public class Journey {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -46,7 +47,7 @@ public class Journey {
 
 	/**
 	 * Sets the '{@link Journey#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newName
@@ -59,7 +60,7 @@ public class Journey {
 
 	/**
 	 * Returns the value of '<em><b>trips</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>trips</b></em>' feature
@@ -70,54 +71,8 @@ public class Journey {
 	}
 
 	/**
-	 * Adds to the <em>trips</em> feature.
-	 * 
-	 * @param tripsValue
-	 *            the value to add
-	 * @return true if the value is added to the collection (it was not yet
-	 *         present in the collection), false otherwise
-	 * @generated
-	 */
-	public boolean addToTrips(Trip tripsValue) {
-		if (!trips.contains(tripsValue)) {
-			boolean result = trips.add(tripsValue);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Removes from the <em>trips</em> feature.
-	 * 
-	 * @param tripsValue
-	 *            the value to remove
-	 * @return true if the value is removed from the collection (it existed in
-	 *         the collection before removing), false otherwise
-	 * 
-	 * @generated
-	 */
-	public boolean removeFromTrips(Trip tripsValue) {
-		if (trips.contains(tripsValue)) {
-			boolean result = trips.remove(tripsValue);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Clears the <em>trips</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void clearTrips() {
-		while (!trips.isEmpty()) {
-			removeFromTrips(trips.iterator().next());
-		}
-	}
-
-	/**
 	 * Sets the '{@link Journey#getTrips() <em>trips</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param newTrips
@@ -137,6 +92,7 @@ public class Journey {
 	 */
 	@Override
 	public String toString() {
-		return "Journey " + " [name: " + getName() + "]";
+		return "Journey " + " [name: " + getName() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }
