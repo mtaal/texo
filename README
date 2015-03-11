@@ -1,0 +1,17 @@
+The Texo repo at github contains example projects and different things I am trying looking at. 
+
+> org.eclipse.emf.texo.web.example
+This is an example of using Texo in a standard java webapp with eclipselink and EMF. It contains example 
+code on how to generate test data and how to call XML/JSON webservices. See this video:
+https://www.youtube.com/watch?v=D0oO4gw-gLI
+
+> org.eclipse.emf.texo.react 
+Is a test project for getting to know Facebook's React functionality and see how it can be used in a 
+model-driven UI framework for generating/working with CRUD interfaces.
+ 
+> org.eclipse.emf.texo.example1.rcp
+Contains an example rcp which can use Texo as the backend. But... it is not complete and probably not functional.
+So not sure if it makes sense for anyone to look at.
+
+For the mid/longer term it seems more viable to integrate the ECP (Eclipse Client Platform) and Texo.
+
