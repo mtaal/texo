@@ -45,10 +45,9 @@ var runBrowserifyTask = function (options) {
 		var start = Date.now();
 		
 		gulp.src(['source/js/**/*.js', 'source/js/**/*.jsx'])
+         .pipe(notify("Processing: <%= file.relative %>"))
 		 .pipe(eslint())
          .pipe(eslint.format())
-         .pipe(notify("Processing file: <%= file.relative %>"))
-         .pipe(eslint.failOnError())
 	     .pipe(jsxcs());
 		
 		bundler.bundle()

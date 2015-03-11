@@ -1,7 +1,12 @@
 "use strict";
 
-var React = require("react"),
-    Counter = React.createClass({
+var React = require("react");
+var PureRenderMixin = require("react/addons").addons.PureRenderMixin;
+var Immutable = require("immutable");
+var Counter = React.createClass({
+
+    mixins: [PureRenderMixin],
+
   incrementCount: function() {
     this.setState({
       count: this.state.count + 1
