@@ -2,3 +2,4 @@ build/
 bin/
 classes/*
 *~
+org.eclipse.emf.texo.react/node_modules
