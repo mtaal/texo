@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<orm:entity-mappings xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+  <orm:persistence-unit-metadata>
+    <orm:persistence-unit-defaults>
+      <orm:delimited-identifiers/>
+    </orm:persistence-unit-defaults>
+  </orm:persistence-unit-metadata>
+  <orm:access>FIELD</orm:access>
+  <orm:entity class="org.eclipse.emf.texo.samples.sport.competition.Competition" name="competition_Competition">
+    <orm:attributes>
+      <orm:basic name="name"/>
+      <orm:many-to-many name="team">
+        <orm:cascade>
+          <orm:cascade-persist/>
+          <orm:cascade-merge/>
+          <orm:cascade-refresh/>
+        </orm:cascade>
+      </orm:many-to-many>
+    </orm:attributes>
+  </orm:entity>
+</orm:entity-mappings>

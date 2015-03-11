@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<orm:entity-mappings xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+  <orm:persistence-unit-metadata>
+    <orm:persistence-unit-defaults>
+      <orm:delimited-identifiers/>
+    </orm:persistence-unit-defaults>
+  </orm:persistence-unit-metadata>
+  <orm:access>FIELD</orm:access>
+  <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Book" name="library_Book">
+    <orm:attributes>
+      <orm:basic name="title"/>
+      <orm:basic name="pages"/>
+      <orm:basic name="category">
+        <orm:enumerated>STRING</orm:enumerated>
+      </orm:basic>
+      <orm:many-to-one name="author" optional="false">
+        <orm:join-column/>
+        <orm:cascade>
+          <orm:cascade-persist/>
+          <orm:cascade-merge/>
+          <orm:cascade-refresh/>
+        </orm:cascade>
+      </orm:many-to-one>
+    </orm:attributes>
+  </orm:entity>
+  <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Writer" name="library_Writer">
+    <orm:attributes>
+      <orm:basic name="name"/>
+      <orm:one-to-many name="books">
+        <orm:join-table/>
+        <orm:cascade>
+          <orm:cascade-persist/>
+          <orm:cascade-merge/>
+          <orm:cascade-refresh/>
+        </orm:cascade>
+      </orm:one-to-many>
+    </orm:attributes>
+  </orm:entity>
+  <orm:entity class="org.eclipse.emf.texo.test.model.samples.library.Library" name="Library">
+    <orm:attributes>
+      <orm:basic name="name"/>
+      <orm:one-to-many name="writers">
+        <orm:cascade>
+          <orm:cascade-all/>
+        </orm:cascade>
+      </orm:one-to-many>
+      <orm:one-to-many name="books">
+        <orm:cascade>
+          <orm:cascade-all/>
+        </orm:cascade>
+      </orm:one-to-many>
+    </orm:attributes>
+  </orm:entity>
+</orm:entity-mappings>
