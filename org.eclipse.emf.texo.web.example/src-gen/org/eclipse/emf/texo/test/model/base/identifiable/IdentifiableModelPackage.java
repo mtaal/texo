@@ -8,15 +8,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.model.ModelResolver;
-import org.eclipse.emf.texo.server.store.DaoRegistry;
-import org.eclipse.emf.texo.test.model.base.identifiable.dao.IdentifiableDao;
 import org.eclipse.emf.texo.utils.ModelUtils;
 
 /**
  * The <b>Package</b> for the model '<em><b>identifiable</b></em>'. It contains
  * initialization code and access to the Factory to instantiate types of this
  * package.
- * 
+ *
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
@@ -77,16 +75,15 @@ public class IdentifiableModelPackage extends ModelPackage {
 	/**
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return an initialized instance of this class
-	 * 
+	 *
 	 * @generated
 	 */
 	public static IdentifiableModelPackage initialize() {
 
 		if (isInitialized) {
-			return (IdentifiableModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (IdentifiableModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final IdentifiableModelPackage modelPackage = new IdentifiableModelPackage();
@@ -104,12 +101,8 @@ public class IdentifiableModelPackage extends ModelPackage {
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(
-				Identifiable.class, modelPackage.getIdentifiableEClass(),
+		ModelResolver.getInstance().registerClassModelMapping(Identifiable.class, modelPackage.getIdentifiableEClass(),
 				modelPackage);
-
-		DaoRegistry.getInstance().registerDao(Identifiable.class,
-				IdentifiableDao.class);
 
 		// and return ourselves
 		return modelPackage;
@@ -118,7 +111,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	/**
 	 * Returns the {@link ModelFactory} of this ModelPackage. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the {@link IdentifiableModelFactory} instance.
 	 * @generated
 	 */
@@ -130,7 +123,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	/**
 	 * Returns the nsUri of the {@link EPackage} managed by this Package
 	 * instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the nsUri of the EPackage
 	 * @generated
 	 */
@@ -143,7 +136,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * Returns the name of the ecore file containing the ecore model of the
 	 * {@link EPackage} managed here. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the name of the ecore file
 	 * @generated
 	 */
@@ -160,8 +153,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getIdentifiableEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				IDENTIFIABLE_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(IDENTIFIABLE_CLASSIFIER_ID);
 	}
 
 	/**
@@ -174,8 +166,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getIdentifiable_Db_Id() {
-		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures()
-				.get(IDENTIFIABLE_DB_ID_FEATURE_ID);
+		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures().get(IDENTIFIABLE_DB_ID_FEATURE_ID);
 	}
 
 	/**
@@ -188,8 +179,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getIdentifiable_Db_version() {
-		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures()
-				.get(IDENTIFIABLE_DB_VERSION_FEATURE_ID);
+		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures().get(IDENTIFIABLE_DB_VERSION_FEATURE_ID);
 	}
 
 	/**
@@ -206,8 +196,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 		case IDENTIFIABLE_CLASSIFIER_ID:
 			return Identifiable.class;
 		default:
-			throw new IllegalArgumentException("The EClassifier '"
-					+ eClassifier + "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
 	}
 }

@@ -5,18 +5,16 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.dao.IdentifiableDao;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelPackage;
 import org.eclipse.emf.texo.model.ModelResolver;
-import org.eclipse.emf.texo.server.store.DaoRegistry;
 import org.eclipse.emf.texo.utils.ModelUtils;
 
 /**
  * The <b>Package</b> for the model '<em><b>identifiable</b></em>'. It contains
  * initialization code and access to the Factory to instantiate types of this
  * package.
- * 
+ *
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
@@ -98,37 +96,36 @@ public class IdentifiableModelPackage extends ModelPackage {
 	/**
 	 * Initializes this {@link ModelPackage}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
+	 * @return an initialized instance of this class
+	 *
 	 * @generated
 	 */
 	public static IdentifiableModelPackage initialize() {
 
 		if (isInitialized) {
-			return (IdentifiableModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (IdentifiableModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final IdentifiableModelPackage modelPackage = new IdentifiableModelPackage();
 
 		ModelResolver.getInstance().registerModelPackage(modelPackage);
 
-		isInitialized = true;
-
 		// read the model from the ecore file, the EPackage is registered in the
 		// EPackage.Registry
 		// see the ModelResolver getEPackageRegistry method
 		ModelUtils.readEPackagesFromFile(modelPackage);
 
-		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(
-				Identifiable.class, modelPackage.getIdentifiableEClass(),
-				modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(
-				IdentifiableInterface.class,
-				modelPackage.getIdentifiableInterfaceEClass(), modelPackage);
+		isInitialized = true;
 
-		DaoRegistry.getInstance().registerDao(Identifiable.class,
-				IdentifiableDao.class);
+		// force the initialization of the EFactory proxy
+		modelPackage.getEPackage();
+
+		// register the relation between a Class and its EClassifier
+		ModelResolver.getInstance().registerClassModelMapping(Identifiable.class, modelPackage.getIdentifiableEClass(),
+				modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(IdentifiableInterface.class,
+				modelPackage.getIdentifiableInterfaceEClass(), modelPackage);
 
 		// and return ourselves
 		return modelPackage;
@@ -149,7 +146,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	/**
 	 * Returns the nsUri of the {@link EPackage} managed by this Package
 	 * instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the nsUri of the EPackage
 	 * @generated
 	 */
@@ -179,8 +176,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getIdentifiableEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				IDENTIFIABLE_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(IDENTIFIABLE_CLASSIFIER_ID);
 	}
 
 	/**
@@ -193,8 +189,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getIdentifiable_Db_Id() {
-		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures()
-				.get(IDENTIFIABLE_DB_ID_FEATURE_ID);
+		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures().get(IDENTIFIABLE_DB_ID_FEATURE_ID);
 	}
 
 	/**
@@ -207,8 +202,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getIdentifiable_Db_version() {
-		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures()
-				.get(IDENTIFIABLE_DB_VERSION_FEATURE_ID);
+		return (EAttribute) getIdentifiableEClass().getEAllStructuralFeatures().get(IDENTIFIABLE_DB_VERSION_FEATURE_ID);
 	}
 
 	/**
@@ -220,8 +214,7 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getIdentifiableInterfaceEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				IDENTIFIABLEINTERFACE_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(IDENTIFIABLEINTERFACE_CLASSIFIER_ID);
 	}
 
 	/**
@@ -234,9 +227,8 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getIdentifiableInterface_Db_Id() {
-		return (EAttribute) getIdentifiableInterfaceEClass()
-				.getEAllStructuralFeatures().get(
-						IDENTIFIABLEINTERFACE_DB_ID_FEATURE_ID);
+		return (EAttribute) getIdentifiableInterfaceEClass().getEAllStructuralFeatures()
+				.get(IDENTIFIABLEINTERFACE_DB_ID_FEATURE_ID);
 	}
 
 	/**
@@ -249,9 +241,8 @@ public class IdentifiableModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getIdentifiableInterface_Db_version() {
-		return (EAttribute) getIdentifiableInterfaceEClass()
-				.getEAllStructuralFeatures().get(
-						IDENTIFIABLEINTERFACE_DB_VERSION_FEATURE_ID);
+		return (EAttribute) getIdentifiableInterfaceEClass().getEAllStructuralFeatures()
+				.get(IDENTIFIABLEINTERFACE_DB_VERSION_FEATURE_ID);
 	}
 
 	/**
@@ -269,8 +260,8 @@ public class IdentifiableModelPackage extends ModelPackage {
 			return Identifiable.class;
 		case IDENTIFIABLEINTERFACE_CLASSIFIER_ID:
 			return IdentifiableInterface.class;
+		default:
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
-		throw new IllegalArgumentException("The EClassifier '" + eClassifier
-				+ "' is not defined in this EPackage");
 	}
 }

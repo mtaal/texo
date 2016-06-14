@@ -38,7 +38,7 @@ public class Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>db_Id</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>db_Id</b></em>' feature
@@ -50,11 +50,11 @@ public class Identifiable {
 
 	/**
 	 * Sets the '{@link Identifiable#getDb_Id() <em>db_Id</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Identifiable#getDb_Id() db_Id}'
+	 * @param newDb_Id
+	 *            the new value of the '{@link Identifiable#getDb_Id() db_Id}'
 	 *            feature.
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>db_version</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>db_version</b></em>' feature
@@ -77,11 +77,11 @@ public class Identifiable {
 	/**
 	 * Sets the '{@link Identifiable#getDb_version() <em>db_version</em>}'
 	 * feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Identifiable#getDb_version()
+	 * @param newDb_version
+	 *            the new value of the '{@link Identifiable#getDb_version()
 	 *            db_version}' feature.
 	 * @generated
 	 */
@@ -97,7 +97,6 @@ public class Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Identifiable " + " [db_Id: " + getDb_Id() + "]"
-				+ " [db_version: " + getDb_version() + "]";
+		return "Identifiable " + " [db_Id: " + getDb_Id() + "]" + " [db_version: " + getDb_version() + "]";
 	}
 }

@@ -169,8 +169,7 @@ public class TravelModelPackage extends ModelPackage {
 	public static TravelModelPackage initialize() {
 
 		if (isInitialized) {
-			return (TravelModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (TravelModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final TravelModelPackage modelPackage = new TravelModelPackage();
@@ -190,12 +189,10 @@ public class TravelModelPackage extends ModelPackage {
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(Journey.class,
-				modelPackage.getJourneyEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(Trip.class,
-				modelPackage.getTripEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(City.class,
-				modelPackage.getCityEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Journey.class, modelPackage.getJourneyEClass(),
+				modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Trip.class, modelPackage.getTripEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(City.class, modelPackage.getCityEClass(), modelPackage);
 
 		// and return ourselves
 		return modelPackage;
@@ -204,7 +201,7 @@ public class TravelModelPackage extends ModelPackage {
 	/**
 	 * Returns the {@link ModelFactory} of this ModelPackage. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the {@link TravelModelFactory} instance.
 	 * @generated
 	 */
@@ -229,7 +226,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * Returns the name of the ecore file containing the ecore model of the
 	 * {@link EPackage} managed here. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the name of the ecore file
 	 * @generated
 	 */
@@ -246,8 +243,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getJourneyEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				JOURNEY_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(JOURNEY_CLASSIFIER_ID);
 	}
 
 	/**
@@ -259,8 +255,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getJourney_Name() {
-		return (EAttribute) getJourneyEClass().getEAllStructuralFeatures().get(
-				JOURNEY_NAME_FEATURE_ID);
+		return (EAttribute) getJourneyEClass().getEAllStructuralFeatures().get(JOURNEY_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -272,8 +267,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getJourney_Trips() {
-		return (EReference) getJourneyEClass().getEAllStructuralFeatures().get(
-				JOURNEY_TRIPS_FEATURE_ID);
+		return (EReference) getJourneyEClass().getEAllStructuralFeatures().get(JOURNEY_TRIPS_FEATURE_ID);
 	}
 
 	/**
@@ -296,8 +290,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getTrip_Name2() {
-		return (EAttribute) getTripEClass().getEAllStructuralFeatures().get(
-				TRIP_NAME2_FEATURE_ID);
+		return (EAttribute) getTripEClass().getEAllStructuralFeatures().get(TRIP_NAME2_FEATURE_ID);
 	}
 
 	/**
@@ -309,8 +302,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getTrip_Destination() {
-		return (EReference) getTripEClass().getEAllStructuralFeatures().get(
-				TRIP_DESTINATION_FEATURE_ID);
+		return (EReference) getTripEClass().getEAllStructuralFeatures().get(TRIP_DESTINATION_FEATURE_ID);
 	}
 
 	/**
@@ -333,8 +325,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getCity_Name() {
-		return (EAttribute) getCityEClass().getEAllStructuralFeatures().get(
-				CITY_NAME_FEATURE_ID);
+		return (EAttribute) getCityEClass().getEAllStructuralFeatures().get(CITY_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -346,8 +337,7 @@ public class TravelModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getCity_Reis() {
-		return (EAttribute) getCityEClass().getEAllStructuralFeatures().get(
-				CITY_REIS_FEATURE_ID);
+		return (EAttribute) getCityEClass().getEAllStructuralFeatures().get(CITY_REIS_FEATURE_ID);
 	}
 
 	/**
@@ -368,8 +358,7 @@ public class TravelModelPackage extends ModelPackage {
 		case CITY_CLASSIFIER_ID:
 			return City.class;
 		default:
-			throw new IllegalArgumentException("The EClassifier '"
-					+ eClassifier + "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
 	}
 }

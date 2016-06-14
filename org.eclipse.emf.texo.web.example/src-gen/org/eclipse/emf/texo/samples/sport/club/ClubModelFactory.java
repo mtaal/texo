@@ -40,9 +40,8 @@ public class ClubModelFactory implements ModelFactory {
 		case ClubModelPackage.MEMBER_CLASSIFIER_ID:
 			return createMember();
 		default:
-			throw new IllegalArgumentException("The EClass '"
-					+ eClass.getName()
-					+ "' is not a valid EClass for this EPackage");
+			throw new IllegalArgumentException(
+					"The EClass '" + eClass.getName() + "' is not a valid EClass for this EPackage");
 		}
 	}
 
@@ -71,8 +70,7 @@ public class ClubModelFactory implements ModelFactory {
 			modelObject = new MemberModelObject();
 			break;
 		default:
-			throw new IllegalArgumentException("The EClass '" + eClass
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClass '" + eClass + "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
 		return (ModelObject<T>) modelObject;
@@ -80,22 +78,22 @@ public class ClubModelFactory implements ModelFactory {
 
 	/**
 	 * Creates a feature map entry instance for a certain EStructuralFeature.
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature
 	 * @return the pojo feature map entry
 	 * @generated
 	 */
 	public Object createFeatureMapEntry(EStructuralFeature eFeature) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
 	 * Wraps a feature map entry pojo in a {@link AbstractModelFeatureMapEntry}.
 	 * If the feature map entry is null then a new one is created and <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature of the object
 	 * @param adaptee
@@ -103,10 +101,9 @@ public class ClubModelFactory implements ModelFactory {
 	 * @return the wrapper {@link ModelFeatureMapEntry}
 	 * @generated
 	 */
-	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(
-			EStructuralFeature eFeature, Object adaptee) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(EStructuralFeature eFeature, Object adaptee) {
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -155,8 +152,7 @@ public class ClubModelFactory implements ModelFactory {
 		case ClubModelPackage.GENDER_CLASSIFIER_ID:
 			return createGenderFromString(value);
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage");
 		}
 	}
 
@@ -175,8 +171,7 @@ public class ClubModelFactory implements ModelFactory {
 		case ClubModelPackage.GENDER_CLASSIFIER_ID:
 			return convertGenderToString((Gender) value);
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage.");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage.");
 		}
 	}
 
@@ -224,8 +219,7 @@ public class ClubModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class ClubModelObject<E extends Club> extends
-			SocietyModelFactory.SocietyModelObject<E> {
+	public static class ClubModelObject<E extends Club> extends SocietyModelFactory.SocietyModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -290,8 +284,7 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -306,8 +299,7 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -329,8 +321,7 @@ public class ClubModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class TeamModelObject<E extends Team> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class TeamModelObject<E extends Team> extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -398,8 +389,7 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -414,8 +404,7 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -437,8 +426,8 @@ public class ClubModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class MemberModelObject<E extends Member> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class MemberModelObject<E extends Member>
+			extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -515,8 +504,7 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -529,8 +517,7 @@ public class ClubModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 

@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.IdentifiableModelFactory;
+import org.eclipse.emf.texo.model.AbstractModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.ModelObject;
@@ -42,15 +43,16 @@ public class MusicModelFactory implements ModelFactory {
 			return createAlbum();
 		case MusicModelPackage.SONG_CLASSIFIER_ID:
 			return createSong();
+		default:
+			throw new IllegalArgumentException(
+					"The EClass '" + eClass.getName() + "' is not a valid EClass for this EPackage");
 		}
-		throw new IllegalArgumentException("The EClass '" + eClass.getName()
-				+ "' is not a valid EClass for this EPackage");
 	}
 
 	/**
 	 * Wraps an object in a {@link ModelObject}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the object
 	 * @param adaptee
@@ -59,7 +61,7 @@ public class MusicModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModelObject createModelObject(EClass eClass, Object adaptee) {
+	public <T> ModelObject<T> createModelObject(EClass eClass, T adaptee) {
 		ModelObject<Object> modelObject = null;
 		switch (eClass.getClassifierID()) {
 		case MusicModelPackage.ARTIST_CLASSIFIER_ID:
@@ -78,11 +80,10 @@ public class MusicModelFactory implements ModelFactory {
 			modelObject = new SongModelObject();
 			break;
 		default:
-			throw new IllegalArgumentException("The EClass '" + eClass
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClass '" + eClass + "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
-		return modelObject;
+		return (ModelObject<T>) modelObject;
 	}
 
 	/**
@@ -94,8 +95,8 @@ public class MusicModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	public Object createFeatureMapEntry(EStructuralFeature eFeature) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -110,10 +111,9 @@ public class MusicModelFactory implements ModelFactory {
 	 * @return the wrapper {@link ModelFeatureMapEntry}
 	 * @generated
 	 */
-	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(
-			EStructuralFeature eFeature, Object adaptee) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(EStructuralFeature eFeature, Object adaptee) {
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -181,9 +181,9 @@ public class MusicModelFactory implements ModelFactory {
 		switch (eDataType.getClassifierID()) {
 		case MusicModelPackage.RATING_CLASSIFIER_ID:
 			return createRatingFromString(value);
+		default:
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage");
 		}
-		throw new IllegalArgumentException("The EDatatype '" + eDataType
-				+ "' is not defined in this EPackage");
 	}
 
 	/**
@@ -200,9 +200,9 @@ public class MusicModelFactory implements ModelFactory {
 		switch (eDataType.getClassifierID()) {
 		case MusicModelPackage.RATING_CLASSIFIER_ID:
 			return convertRatingToString((Rating) value);
+		default:
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage.");
 		}
-		throw new IllegalArgumentException("The EDatatype '" + eDataType
-				+ "' is not defined in this EPackage.");
 	}
 
 	/**
@@ -245,8 +245,8 @@ public class MusicModelFactory implements ModelFactory {
 	 * 
 	 * @generated
 	 */
-	public static class ArtistModelObject<E extends Artist> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class ArtistModelObject<E extends Artist>
+			extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -267,9 +267,21 @@ public class MusicModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Artist.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case MusicModelPackage.ARTIST_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case MusicModelPackage.ARTIST_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case MusicModelPackage.ARTIST_FIRSTNAME_FEATURE_ID:
 				return getTarget().getFirstName();
 			case MusicModelPackage.ARTIST_LASTNAME_FEATURE_ID:
@@ -280,8 +292,9 @@ public class MusicModelFactory implements ModelFactory {
 				return getTarget().getCountry();
 			case MusicModelPackage.ARTIST_GENRE_FEATURE_ID:
 				return getTarget().getGenre();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -306,33 +319,35 @@ public class MusicModelFactory implements ModelFactory {
 			case MusicModelPackage.ARTIST_GENRE_FEATURE_ID:
 				getTarget().setGenre((Genre) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 
@@ -342,8 +357,8 @@ public class MusicModelFactory implements ModelFactory {
 	 * 
 	 * @generated
 	 */
-	public static class CountryModelObject<E extends Country> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class CountryModelObject<E extends Country>
+			extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -364,15 +379,28 @@ public class MusicModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Country.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case MusicModelPackage.COUNTRY_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case MusicModelPackage.COUNTRY_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case MusicModelPackage.COUNTRY_CODE_FEATURE_ID:
 				return getTarget().getCode();
 			case MusicModelPackage.COUNTRY_NAME_FEATURE_ID:
 				return getTarget().getName();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -388,33 +416,35 @@ public class MusicModelFactory implements ModelFactory {
 			case MusicModelPackage.COUNTRY_NAME_FEATURE_ID:
 				getTarget().setName((String) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 
@@ -424,8 +454,7 @@ public class MusicModelFactory implements ModelFactory {
 	 * 
 	 * @generated
 	 */
-	public static class GenreModelObject<E extends Genre> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class GenreModelObject<E extends Genre> extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -446,13 +475,26 @@ public class MusicModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Genre.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case MusicModelPackage.GENRE_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case MusicModelPackage.GENRE_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case MusicModelPackage.GENRE_NAME_FEATURE_ID:
 				return getTarget().getName();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -465,33 +507,35 @@ public class MusicModelFactory implements ModelFactory {
 			case MusicModelPackage.GENRE_NAME_FEATURE_ID:
 				getTarget().setName((String) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 
@@ -501,8 +545,7 @@ public class MusicModelFactory implements ModelFactory {
 	 * 
 	 * @generated
 	 */
-	public static class AlbumModelObject<E extends Album> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class AlbumModelObject<E extends Album> extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -523,9 +566,21 @@ public class MusicModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Album.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case MusicModelPackage.ALBUM_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case MusicModelPackage.ALBUM_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case MusicModelPackage.ALBUM_NAME_FEATURE_ID:
 				return getTarget().getName();
 			case MusicModelPackage.ALBUM_ARTIST_FEATURE_ID:
@@ -538,8 +593,9 @@ public class MusicModelFactory implements ModelFactory {
 				return getTarget().getSongs();
 			case MusicModelPackage.ALBUM_RATINGS_FEATURE_ID:
 				return getTarget().getRatings();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -568,49 +624,51 @@ public class MusicModelFactory implements ModelFactory {
 			case MusicModelPackage.ALBUM_RATINGS_FEATURE_ID:
 				getTarget().setRatings((List<Rating>) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
 			case MusicModelPackage.ALBUM_GENRES_FEATURE_ID:
-				getTarget().getGenres().add((Genre) value);
-				return;
+				return getTarget().getGenres().add((Genre) value);
 
 			case MusicModelPackage.ALBUM_SONGS_FEATURE_ID:
-				getTarget().getSongs().add((Song) value);
-				return;
+				return getTarget().getSongs().add((Song) value);
 
+			case MusicModelPackage.ALBUM_RATINGS_FEATURE_ID:
+				return getTarget().getRatings().add((Rating) value);
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
 			case MusicModelPackage.ALBUM_GENRES_FEATURE_ID:
-				getTarget().getGenres().remove((Genre) value);
-				return;
+				return getTarget().getGenres().remove(value);
 
 			case MusicModelPackage.ALBUM_SONGS_FEATURE_ID:
-				getTarget().getSongs().remove((Song) value);
-				return;
+				return getTarget().getSongs().remove(value);
 
+			case MusicModelPackage.ALBUM_RATINGS_FEATURE_ID:
+				return getTarget().getRatings().remove(value);
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 
@@ -620,8 +678,7 @@ public class MusicModelFactory implements ModelFactory {
 	 * 
 	 * @generated
 	 */
-	public static class SongModelObject<E extends Song> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class SongModelObject<E extends Song> extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -642,15 +699,28 @@ public class MusicModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Song.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
+			case MusicModelPackage.SONG_DB_ID_FEATURE_ID:
+				return getTarget().getDb_Id();
+			case MusicModelPackage.SONG_DB_VERSION_FEATURE_ID:
+				return getTarget().getDb_version();
 			case MusicModelPackage.SONG_TRACK_FEATURE_ID:
 				return getTarget().getTrack();
 			case MusicModelPackage.SONG_NAME_FEATURE_ID:
 				return getTarget().getName();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -666,33 +736,35 @@ public class MusicModelFactory implements ModelFactory {
 			case MusicModelPackage.SONG_NAME_FEATURE_ID:
 				getTarget().setName((String) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 

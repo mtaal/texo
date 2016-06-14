@@ -39,9 +39,8 @@ public class LibraryModelFactory implements ModelFactory {
 		case LibraryModelPackage.LIBRARY_CLASSIFIER_ID:
 			return createLibrary();
 		default:
-			throw new IllegalArgumentException("The EClass '"
-					+ eClass.getName()
-					+ "' is not a valid EClass for this EPackage");
+			throw new IllegalArgumentException(
+					"The EClass '" + eClass.getName() + "' is not a valid EClass for this EPackage");
 		}
 	}
 
@@ -70,8 +69,7 @@ public class LibraryModelFactory implements ModelFactory {
 			modelObject = new LibraryModelObject();
 			break;
 		default:
-			throw new IllegalArgumentException("The EClass '" + eClass
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClass '" + eClass + "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
 		return (ModelObject<T>) modelObject;
@@ -79,22 +77,22 @@ public class LibraryModelFactory implements ModelFactory {
 
 	/**
 	 * Creates a feature map entry instance for a certain EStructuralFeature.
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature
 	 * @return the pojo feature map entry
 	 * @generated
 	 */
 	public Object createFeatureMapEntry(EStructuralFeature eFeature) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
 	 * Wraps a feature map entry pojo in a {@link AbstractModelFeatureMapEntry}.
 	 * If the feature map entry is null then a new one is created and <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature of the object
 	 * @param adaptee
@@ -102,10 +100,9 @@ public class LibraryModelFactory implements ModelFactory {
 	 * @return the wrapper {@link ModelFeatureMapEntry}
 	 * @generated
 	 */
-	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(
-			EStructuralFeature eFeature, Object adaptee) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(EStructuralFeature eFeature, Object adaptee) {
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -154,8 +151,7 @@ public class LibraryModelFactory implements ModelFactory {
 		case LibraryModelPackage.BOOKCATEGORY_CLASSIFIER_ID:
 			return createBookCategoryFromString(value);
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage");
 		}
 	}
 
@@ -174,8 +170,7 @@ public class LibraryModelFactory implements ModelFactory {
 		case LibraryModelPackage.BOOKCATEGORY_CLASSIFIER_ID:
 			return convertBookCategoryToString((BookCategory) value);
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage.");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage.");
 		}
 	}
 
@@ -223,8 +218,7 @@ public class LibraryModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class BookModelObject<E extends Book> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class BookModelObject<E extends Book> extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -301,8 +295,7 @@ public class LibraryModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -315,8 +308,7 @@ public class LibraryModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -336,8 +328,8 @@ public class LibraryModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class WriterModelObject<E extends Writer> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class WriterModelObject<E extends Writer>
+			extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -405,8 +397,7 @@ public class LibraryModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -421,8 +412,7 @@ public class LibraryModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -444,8 +434,8 @@ public class LibraryModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class LibraryModelObject<E extends Library> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class LibraryModelObject<E extends Library>
+			extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -518,8 +508,7 @@ public class LibraryModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -537,8 +526,7 @@ public class LibraryModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 

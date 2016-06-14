@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="music"
-    nsURI="http://www.eclipse.org/emf/texo/test/model/samples/music" nsPrefix="org.elver.music">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="music" nsURI="http://www.eclipse.org/emf/texo/test/model/samples/music"
+    nsPrefix="org.elver.music">
   <eClassifiers xsi:type="ecore:EClass" name="Artist" eSuperTypes="http://www.eclipse.org/emf/texo/test/model/base/identifiable#//Identifiable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="org.eclipse.emf.texo">
@@ -108,4 +107,3 @@
     <eLiterals name="HIGH" value="1"/>
   </eClassifiers>
 </ecore:EPackage>
-

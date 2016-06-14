@@ -67,8 +67,7 @@ public enum BookCategory {
 	 * 
 	 * @generated
 	 */
-	private static final BookCategory[] VALUES_ARRAY = new BookCategory[] {
-			MYSTERY, SCIENCEFICTION, BIOGRAPHY };
+	private static final BookCategory[] VALUES_ARRAY = new BookCategory[] { MYSTERY, SCIENCEFICTION, BIOGRAPHY };
 
 	/**
 	 * A public read-only list of all the '<em><b>BookCategory</b></em>'
@@ -76,8 +75,7 @@ public enum BookCategory {
 	 * 
 	 * @generated
 	 */
-	public static final List<BookCategory> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BookCategory> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>BookCategory</b></em>' literal with the specified

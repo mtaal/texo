@@ -31,8 +31,7 @@ public class Competition extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH })
+	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private List<Team> team = new ArrayList<Team>();
 
 	/**
@@ -95,7 +94,6 @@ public class Competition extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Competition " + " [name: " + getName() + "]" + "{extends: "
-				+ super.toString() + "} ";
+		return "Competition " + " [name: " + getName() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

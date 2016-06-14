@@ -2,7 +2,6 @@ package org.eclipse.emf.texo.example1.rcp.persistence.model.music;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
-
 import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable;
 
 /**
@@ -11,7 +10,7 @@ import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifi
  * 
  * @generated
  */
-@Entity(name = "Country")
+@Entity(name = "org_elver_music_Country")
 public class Country extends Identifiable {
 
 	/**
@@ -27,12 +26,12 @@ public class Country extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	private String name = null;
 
 	/**
 	 * Returns the value of '<em><b>code</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>code</b></em>' feature
@@ -44,11 +43,11 @@ public class Country extends Identifiable {
 
 	/**
 	 * Sets the '{@link Country#getCode() <em>code</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Country#getCode() code}' feature.
+	 * @param newCode
+	 *            the new value of the '{@link Country#getCode() code}' feature.
 	 * @generated
 	 */
 	public void setCode(String newCode) {
@@ -57,7 +56,7 @@ public class Country extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -69,11 +68,11 @@ public class Country extends Identifiable {
 
 	/**
 	 * Sets the '{@link Country#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Country#getName() name}' feature.
+	 * @param newName
+	 *            the new value of the '{@link Country#getName() name}' feature.
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -88,7 +87,7 @@ public class Country extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Country " + " [code: " + getCode() + "]" + " [name: "
-				+ getName() + "]";
+		return "Country " + " [code: " + getCode() + "]" + " [name: " + getName() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

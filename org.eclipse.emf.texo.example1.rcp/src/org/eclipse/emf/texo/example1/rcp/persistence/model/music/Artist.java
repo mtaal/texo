@@ -4,12 +4,9 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable;
 
 /**
@@ -18,7 +15,7 @@ import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifi
  * 
  * @generated
  */
-@Entity(name = "Artist")
+@Entity(name = "org_elver_music_Artist")
 public class Artist extends Identifiable {
 
 	/**
@@ -26,7 +23,7 @@ public class Artist extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	private String firstName = null;
 
 	/**
@@ -34,7 +31,7 @@ public class Artist extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	private String lastName = null;
 
 	/**
@@ -42,7 +39,7 @@ public class Artist extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	@Temporal(TemporalType.DATE)
 	private Date birthDate = null;
 
@@ -51,9 +48,7 @@ public class Artist extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, optional = true, targetEntity = Country.class)
-	@JoinColumns({ @JoinColumn() })
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private Country country = null;
 
 	/**
@@ -61,14 +56,12 @@ public class Artist extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, optional = true, targetEntity = Genre.class)
-	@JoinColumns({ @JoinColumn() })
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private Genre genre = null;
 
 	/**
 	 * Returns the value of '<em><b>firstName</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>firstName</b></em>' feature
@@ -80,11 +73,11 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Sets the '{@link Artist#getFirstName() <em>firstName</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Artist#getFirstName() firstName}'
+	 * @param newFirstName
+	 *            the new value of the '{@link Artist#getFirstName() firstName}'
 	 *            feature.
 	 * @generated
 	 */
@@ -94,7 +87,7 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>lastName</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>lastName</b></em>' feature
@@ -106,11 +99,11 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Sets the '{@link Artist#getLastName() <em>lastName</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Artist#getLastName() lastName}'
+	 * @param newLastName
+	 *            the new value of the '{@link Artist#getLastName() lastName}'
 	 *            feature.
 	 * @generated
 	 */
@@ -120,7 +113,7 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>birthDate</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>birthDate</b></em>' feature
@@ -132,11 +125,11 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Sets the '{@link Artist#getBirthDate() <em>birthDate</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Artist#getBirthDate() birthDate}'
+	 * @param newBirthDate
+	 *            the new value of the '{@link Artist#getBirthDate() birthDate}'
 	 *            feature.
 	 * @generated
 	 */
@@ -146,7 +139,7 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>country</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>country</b></em>' feature
@@ -158,11 +151,11 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Sets the '{@link Artist#getCountry() <em>country</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Artist#getCountry() country}'
+	 * @param newCountry
+	 *            the new value of the '{@link Artist#getCountry() country}'
 	 *            feature.
 	 * @generated
 	 */
@@ -172,7 +165,7 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>genre</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>genre</b></em>' feature
@@ -184,11 +177,12 @@ public class Artist extends Identifiable {
 
 	/**
 	 * Sets the '{@link Artist#getGenre() <em>genre</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Artist#getGenre() genre}' feature.
+	 * @param newGenre
+	 *            the new value of the '{@link Artist#getGenre() genre}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setGenre(Genre newGenre) {
@@ -203,8 +197,7 @@ public class Artist extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Artist " + " [firstName: " + getFirstName() + "]"
-				+ " [lastName: " + getLastName() + "]" + " [birthDate: "
-				+ getBirthDate() + "]";
+		return "Artist " + " [firstName: " + getFirstName() + "]" + " [lastName: " + getLastName() + "]"
+				+ " [birthDate: " + getBirthDate() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

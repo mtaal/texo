@@ -80,7 +80,7 @@ public class Library extends Identifiable {
 
 	/**
 	 * Adds to the <em>writers</em> feature.
-	 * 
+	 *
 	 * @param writersValue
 	 *            the value to add
 	 * @return true if the value is added to the collection (it was not yet
@@ -97,12 +97,12 @@ public class Library extends Identifiable {
 
 	/**
 	 * Removes from the <em>writers</em> feature.
-	 * 
+	 *
 	 * @param writersValue
 	 *            the value to remove
 	 * @return true if the value is removed from the collection (it existed in
 	 *         the collection before removing), false otherwise
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean removeFromWriters(Writer writersValue) {
@@ -155,7 +155,7 @@ public class Library extends Identifiable {
 
 	/**
 	 * Adds to the <em>books</em> feature.
-	 * 
+	 *
 	 * @param booksValue
 	 *            the value to add
 	 * @return true if the value is added to the collection (it was not yet
@@ -172,12 +172,12 @@ public class Library extends Identifiable {
 
 	/**
 	 * Removes from the <em>books</em> feature.
-	 * 
+	 *
 	 * @param booksValue
 	 *            the value to remove
 	 * @return true if the value is removed from the collection (it existed in
 	 *         the collection before removing), false otherwise
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean removeFromBooks(Book booksValue) {
@@ -224,7 +224,6 @@ public class Library extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Library " + " [name: " + getName() + "]" + "{extends: "
-				+ super.toString() + "} ";
+		return "Library " + " [name: " + getName() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

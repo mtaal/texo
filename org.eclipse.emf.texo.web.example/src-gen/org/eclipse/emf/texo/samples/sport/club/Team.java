@@ -30,8 +30,7 @@ public class Team extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH })
+	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private List<Member> member = new ArrayList<Member>();
 
 	/**
@@ -93,7 +92,6 @@ public class Team extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Team " + " [name: " + getName() + "]" + "{extends: "
-				+ super.toString() + "} ";
+		return "Team " + " [name: " + getName() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }
