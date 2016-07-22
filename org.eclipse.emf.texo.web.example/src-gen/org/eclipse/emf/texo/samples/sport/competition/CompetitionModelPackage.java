@@ -100,8 +100,7 @@ public class CompetitionModelPackage extends ModelPackage {
 	public static CompetitionModelPackage initialize() {
 
 		if (isInitialized) {
-			return (CompetitionModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (CompetitionModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final CompetitionModelPackage modelPackage = new CompetitionModelPackage();
@@ -122,8 +121,7 @@ public class CompetitionModelPackage extends ModelPackage {
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(
-				Competition.class, modelPackage.getCompetitionEClass(),
+		ModelResolver.getInstance().registerClassModelMapping(Competition.class, modelPackage.getCompetitionEClass(),
 				modelPackage);
 
 		// and return ourselves
@@ -133,7 +131,7 @@ public class CompetitionModelPackage extends ModelPackage {
 	/**
 	 * Returns the {@link ModelFactory} of this ModelPackage. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the {@link CompetitionModelFactory} instance.
 	 * @generated
 	 */
@@ -158,7 +156,7 @@ public class CompetitionModelPackage extends ModelPackage {
 	 * Returns the name of the ecore file containing the ecore model of the
 	 * {@link EPackage} managed here. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the name of the ecore file
 	 * @generated
 	 */
@@ -175,8 +173,7 @@ public class CompetitionModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getCompetitionEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				COMPETITION_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(COMPETITION_CLASSIFIER_ID);
 	}
 
 	/**
@@ -188,8 +185,7 @@ public class CompetitionModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getCompetition_Name() {
-		return (EAttribute) getCompetitionEClass().getEAllStructuralFeatures()
-				.get(COMPETITION_NAME_FEATURE_ID);
+		return (EAttribute) getCompetitionEClass().getEAllStructuralFeatures().get(COMPETITION_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -201,8 +197,7 @@ public class CompetitionModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getCompetition_Team() {
-		return (EReference) getCompetitionEClass().getEAllStructuralFeatures()
-				.get(COMPETITION_TEAM_FEATURE_ID);
+		return (EReference) getCompetitionEClass().getEAllStructuralFeatures().get(COMPETITION_TEAM_FEATURE_ID);
 	}
 
 	/**
@@ -219,8 +214,7 @@ public class CompetitionModelPackage extends ModelPackage {
 		case COMPETITION_CLASSIFIER_ID:
 			return Competition.class;
 		default:
-			throw new IllegalArgumentException("The EClassifier '"
-					+ eClassifier + "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
 	}
 }

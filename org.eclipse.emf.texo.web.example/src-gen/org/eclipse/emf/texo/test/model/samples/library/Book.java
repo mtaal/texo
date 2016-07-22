@@ -49,8 +49,7 @@ public class Book extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, optional = false)
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH }, optional = false)
 	@JoinColumns({ @JoinColumn() })
 	private Writer author = null;
 
@@ -172,8 +171,7 @@ public class Book extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Book " + " [title: " + getTitle() + "]" + " [pages: "
-				+ getPages() + "]" + " [category: " + getCategory() + "]"
-				+ "{extends: " + super.toString() + "} ";
+		return "Book " + " [title: " + getTitle() + "]" + " [pages: " + getPages() + "]" + " [category: "
+				+ getCategory() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

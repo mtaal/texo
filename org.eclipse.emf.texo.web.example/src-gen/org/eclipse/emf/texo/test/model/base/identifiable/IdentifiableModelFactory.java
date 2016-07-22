@@ -34,16 +34,15 @@ public class IdentifiableModelFactory implements ModelFactory {
 		case IdentifiableModelPackage.IDENTIFIABLE_CLASSIFIER_ID:
 			return createIdentifiable();
 		default:
-			throw new IllegalArgumentException("The EClass '"
-					+ eClass.getName()
-					+ "' is not a valid EClass for this EPackage");
+			throw new IllegalArgumentException(
+					"The EClass '" + eClass.getName() + "' is not a valid EClass for this EPackage");
 		}
 	}
 
 	/**
 	 * Wraps an object in a {@link ModelObject}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the object
 	 * @param adaptee
@@ -52,38 +51,37 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModelObject createModelObject(EClass eClass, Object adaptee) {
+	public <T> ModelObject<T> createModelObject(EClass eClass, T adaptee) {
 		ModelObject<Object> modelObject = null;
 		switch (eClass.getClassifierID()) {
 		case IdentifiableModelPackage.IDENTIFIABLE_CLASSIFIER_ID:
 			modelObject = new IdentifiableModelObject();
 			break;
 		default:
-			throw new IllegalArgumentException("The EClass '" + eClass
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClass '" + eClass + "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
-		return modelObject;
+		return (ModelObject<T>) modelObject;
 	}
 
 	/**
 	 * Creates a feature map entry instance for a certain EStructuralFeature.
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature
 	 * @return the pojo feature map entry
 	 * @generated
 	 */
 	public Object createFeatureMapEntry(EStructuralFeature eFeature) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
 	 * Wraps a feature map entry pojo in a {@link AbstractModelFeatureMapEntry}.
 	 * If the feature map entry is null then a new one is created and <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature of the object
 	 * @param adaptee
@@ -91,10 +89,9 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 * @return the wrapper {@link ModelFeatureMapEntry}
 	 * @generated
 	 */
-	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(
-			EStructuralFeature eFeature, Object adaptee) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(EStructuralFeature eFeature, Object adaptee) {
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -122,8 +119,7 @@ public class IdentifiableModelFactory implements ModelFactory {
 	public Object createFromString(EDataType eDataType, String value) {
 		switch (eDataType.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage");
 		}
 	}
 
@@ -140,23 +136,21 @@ public class IdentifiableModelFactory implements ModelFactory {
 	public String convertToString(EDataType eDataType, Object value) {
 		switch (eDataType.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage.");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage.");
 		}
 	}
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>Identifiable</b></em>'.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param <E>
 	 *            the domain model java class
-	 * 
+	 *
 	 * @generated
 	 */
-	public static class IdentifiableModelObject<E extends Identifiable> extends
-			AbstractModelObject<E> {
+	public static class IdentifiableModelObject<E extends Identifiable> extends AbstractModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -169,6 +163,14 @@ public class IdentifiableModelFactory implements ModelFactory {
 		 */
 		public ModelPackage getModelPackage() {
 			return IdentifiableModelPackage.INSTANCE;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Class<?> getTargetClass() {
+			return Identifiable.class;
 		}
 
 		/**
@@ -209,8 +211,7 @@ public class IdentifiableModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -223,8 +224,7 @@ public class IdentifiableModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 

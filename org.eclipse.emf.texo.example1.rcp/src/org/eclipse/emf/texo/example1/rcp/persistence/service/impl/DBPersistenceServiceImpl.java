@@ -12,7 +12,7 @@ import org.eclipse.emf.texo.example1.rcp.persistence.model.music.MusicModelPacka
 import org.eclipse.emf.texo.example1.rcp.persistence.service.PersistenceService;
 import org.eclipse.emf.texo.server.store.EPersistenceService;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
-import org.eclipse.persistence.jpa.osgi.PersistenceProvider;
+import org.eclipse.persistence.jpa.PersistenceProvider;
 
 public class DBPersistenceServiceImpl implements PersistenceService {
 

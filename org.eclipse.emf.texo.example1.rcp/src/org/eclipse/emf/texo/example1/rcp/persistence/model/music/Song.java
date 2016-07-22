@@ -2,7 +2,6 @@ package org.eclipse.emf.texo.example1.rcp.persistence.model.music;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
-
 import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable;
 
 /**
@@ -11,7 +10,7 @@ import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifi
  * 
  * @generated
  */
-@Entity(name = "Song")
+@Entity(name = "org_elver_music_Song")
 public class Song extends Identifiable {
 
 	/**
@@ -19,7 +18,7 @@ public class Song extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	private int track = 0;
 
 	/**
@@ -27,12 +26,12 @@ public class Song extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	private String name = null;
 
 	/**
 	 * Returns the value of '<em><b>track</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>track</b></em>' feature
@@ -44,11 +43,11 @@ public class Song extends Identifiable {
 
 	/**
 	 * Sets the '{@link Song#getTrack() <em>track</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Song#getTrack() track}' feature.
+	 * @param newTrack
+	 *            the new value of the '{@link Song#getTrack() track}' feature.
 	 * @generated
 	 */
 	public void setTrack(int newTrack) {
@@ -57,7 +56,7 @@ public class Song extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -69,11 +68,11 @@ public class Song extends Identifiable {
 
 	/**
 	 * Sets the '{@link Song#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Song#getName() name}' feature.
+	 * @param newName
+	 *            the new value of the '{@link Song#getName() name}' feature.
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -88,7 +87,7 @@ public class Song extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Song " + " [track: " + getTrack() + "]" + " [name: "
-				+ getName() + "]";
+		return "Song " + " [track: " + getTrack() + "]" + " [name: " + getName() + "]" + "{extends: " + super.toString()
+				+ "} ";
 	}
 }

@@ -91,8 +91,7 @@ public class SocietyModelPackage extends ModelPackage {
 	public static SocietyModelPackage initialize() {
 
 		if (isInitialized) {
-			return (SocietyModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (SocietyModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final SocietyModelPackage modelPackage = new SocietyModelPackage();
@@ -112,8 +111,8 @@ public class SocietyModelPackage extends ModelPackage {
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(Society.class,
-				modelPackage.getSocietyEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Society.class, modelPackage.getSocietyEClass(),
+				modelPackage);
 
 		// and return ourselves
 		return modelPackage;
@@ -122,7 +121,7 @@ public class SocietyModelPackage extends ModelPackage {
 	/**
 	 * Returns the {@link ModelFactory} of this ModelPackage. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the {@link SocietyModelFactory} instance.
 	 * @generated
 	 */
@@ -147,7 +146,7 @@ public class SocietyModelPackage extends ModelPackage {
 	 * Returns the name of the ecore file containing the ecore model of the
 	 * {@link EPackage} managed here. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the name of the ecore file
 	 * @generated
 	 */
@@ -164,8 +163,7 @@ public class SocietyModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getSocietyEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				SOCIETY_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(SOCIETY_CLASSIFIER_ID);
 	}
 
 	/**
@@ -177,8 +175,7 @@ public class SocietyModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getSociety_Name() {
-		return (EAttribute) getSocietyEClass().getEAllStructuralFeatures().get(
-				SOCIETY_NAME_FEATURE_ID);
+		return (EAttribute) getSocietyEClass().getEAllStructuralFeatures().get(SOCIETY_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -195,8 +192,7 @@ public class SocietyModelPackage extends ModelPackage {
 		case SOCIETY_CLASSIFIER_ID:
 			return Society.class;
 		default:
-			throw new IllegalArgumentException("The EClassifier '"
-					+ eClassifier + "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
 	}
 }

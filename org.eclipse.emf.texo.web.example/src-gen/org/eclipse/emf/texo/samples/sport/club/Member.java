@@ -158,9 +158,7 @@ public class Member extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Member " + " [name: " + getName() + "]" + " [lastName: "
-				+ getLastName() + "]" + " [age: " + getAge() + "]"
-				+ " [gender: " + getGender() + "]" + "{extends: "
-				+ super.toString() + "} ";
+		return "Member " + " [name: " + getName() + "]" + " [lastName: " + getLastName() + "]" + " [age: " + getAge()
+				+ "]" + " [gender: " + getGender() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

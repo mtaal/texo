@@ -28,8 +28,7 @@ public class Trip extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH })
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private City destination = null;
 
 	/**
@@ -91,7 +90,6 @@ public class Trip extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Trip " + " [name2: " + getName2() + "]" + "{extends: "
-				+ super.toString() + "} ";
+		return "Trip " + " [name2: " + getName2() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

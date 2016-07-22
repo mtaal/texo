@@ -198,8 +198,7 @@ public class LibraryModelPackage extends ModelPackage {
 	public static LibraryModelPackage initialize() {
 
 		if (isInitialized) {
-			return (LibraryModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (LibraryModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final LibraryModelPackage modelPackage = new LibraryModelPackage();
@@ -219,15 +218,13 @@ public class LibraryModelPackage extends ModelPackage {
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(Book.class,
-				modelPackage.getBookEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(Writer.class,
-				modelPackage.getWriterEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(Library.class,
-				modelPackage.getLibraryEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Book.class, modelPackage.getBookEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Writer.class, modelPackage.getWriterEClass(),
+				modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Library.class, modelPackage.getLibraryEClass(),
+				modelPackage);
 
-		ModelResolver.getInstance().registerClassModelMapping(
-				BookCategory.class, modelPackage.getBookCategoryEEnum(),
+		ModelResolver.getInstance().registerClassModelMapping(BookCategory.class, modelPackage.getBookCategoryEEnum(),
 				modelPackage);
 
 		// and return ourselves
@@ -237,7 +234,7 @@ public class LibraryModelPackage extends ModelPackage {
 	/**
 	 * Returns the {@link ModelFactory} of this ModelPackage. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the {@link LibraryModelFactory} instance.
 	 * @generated
 	 */
@@ -262,7 +259,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * Returns the name of the ecore file containing the ecore model of the
 	 * {@link EPackage} managed here. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the name of the ecore file
 	 * @generated
 	 */
@@ -291,8 +288,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getBook_Title() {
-		return (EAttribute) getBookEClass().getEAllStructuralFeatures().get(
-				BOOK_TITLE_FEATURE_ID);
+		return (EAttribute) getBookEClass().getEAllStructuralFeatures().get(BOOK_TITLE_FEATURE_ID);
 	}
 
 	/**
@@ -304,8 +300,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getBook_Pages() {
-		return (EAttribute) getBookEClass().getEAllStructuralFeatures().get(
-				BOOK_PAGES_FEATURE_ID);
+		return (EAttribute) getBookEClass().getEAllStructuralFeatures().get(BOOK_PAGES_FEATURE_ID);
 	}
 
 	/**
@@ -317,8 +312,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getBook_Category() {
-		return (EAttribute) getBookEClass().getEAllStructuralFeatures().get(
-				BOOK_CATEGORY_FEATURE_ID);
+		return (EAttribute) getBookEClass().getEAllStructuralFeatures().get(BOOK_CATEGORY_FEATURE_ID);
 	}
 
 	/**
@@ -330,8 +324,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getBook_Author() {
-		return (EReference) getBookEClass().getEAllStructuralFeatures().get(
-				BOOK_AUTHOR_FEATURE_ID);
+		return (EReference) getBookEClass().getEAllStructuralFeatures().get(BOOK_AUTHOR_FEATURE_ID);
 	}
 
 	/**
@@ -342,8 +335,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getWriterEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				WRITER_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(WRITER_CLASSIFIER_ID);
 	}
 
 	/**
@@ -355,8 +347,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getWriter_Name() {
-		return (EAttribute) getWriterEClass().getEAllStructuralFeatures().get(
-				WRITER_NAME_FEATURE_ID);
+		return (EAttribute) getWriterEClass().getEAllStructuralFeatures().get(WRITER_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -368,8 +359,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getWriter_Books() {
-		return (EReference) getWriterEClass().getEAllStructuralFeatures().get(
-				WRITER_BOOKS_FEATURE_ID);
+		return (EReference) getWriterEClass().getEAllStructuralFeatures().get(WRITER_BOOKS_FEATURE_ID);
 	}
 
 	/**
@@ -380,8 +370,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getLibraryEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				LIBRARY_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(LIBRARY_CLASSIFIER_ID);
 	}
 
 	/**
@@ -393,8 +382,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getLibrary_Name() {
-		return (EAttribute) getLibraryEClass().getEAllStructuralFeatures().get(
-				LIBRARY_NAME_FEATURE_ID);
+		return (EAttribute) getLibraryEClass().getEAllStructuralFeatures().get(LIBRARY_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -406,8 +394,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getLibrary_Writers() {
-		return (EReference) getLibraryEClass().getEAllStructuralFeatures().get(
-				LIBRARY_WRITERS_FEATURE_ID);
+		return (EReference) getLibraryEClass().getEAllStructuralFeatures().get(LIBRARY_WRITERS_FEATURE_ID);
 	}
 
 	/**
@@ -419,8 +406,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getLibrary_Books() {
-		return (EReference) getLibraryEClass().getEAllStructuralFeatures().get(
-				LIBRARY_BOOKS_FEATURE_ID);
+		return (EReference) getLibraryEClass().getEAllStructuralFeatures().get(LIBRARY_BOOKS_FEATURE_ID);
 	}
 
 	/**
@@ -432,8 +418,7 @@ public class LibraryModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EEnum getBookCategoryEEnum() {
-		return (EEnum) getEPackage().getEClassifiers().get(
-				BOOKCATEGORY_CLASSIFIER_ID);
+		return (EEnum) getEPackage().getEClassifiers().get(BOOKCATEGORY_CLASSIFIER_ID);
 	}
 
 	/**
@@ -456,8 +441,7 @@ public class LibraryModelPackage extends ModelPackage {
 		case BOOKCATEGORY_CLASSIFIER_ID:
 			return BookCategory.class;
 		default:
-			throw new IllegalArgumentException("The EClassifier '"
-					+ eClassifier + "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
 	}
 }

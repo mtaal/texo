@@ -2,7 +2,6 @@ package org.eclipse.emf.texo.example1.rcp.persistence.model.music;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
-
 import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable;
 
 /**
@@ -11,7 +10,7 @@ import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifi
  * 
  * @generated
  */
-@Entity(name = "Genre")
+@Entity(name = "org_elver_music_Genre")
 public class Genre extends Identifiable {
 
 	/**
@@ -24,7 +23,7 @@ public class Genre extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -36,11 +35,11 @@ public class Genre extends Identifiable {
 
 	/**
 	 * Sets the '{@link Genre#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Genre#getName() name}' feature.
+	 * @param newName
+	 *            the new value of the '{@link Genre#getName() name}' feature.
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -55,6 +54,6 @@ public class Genre extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Genre " + " [name: " + getName() + "]";
+		return "Genre " + " [name: " + getName() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

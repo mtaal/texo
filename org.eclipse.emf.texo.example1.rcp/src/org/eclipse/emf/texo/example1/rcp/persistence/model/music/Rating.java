@@ -59,13 +59,15 @@ public enum Rating {
 	 * 
 	 * @generated
 	 */
-	public static final List<Rating> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Rating> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Rating</b></em>' literal with the specified literal
 	 * value. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
+	 * @param literal
+	 *            the literal to use to get the enum instance
+	 * @return the Rating, the literal enum class
 	 * @generated
 	 */
 	public static Rating get(String literal) {
@@ -82,6 +84,9 @@ public enum Rating {
 	 * Returns the '<em><b>Rating</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @param name
+	 *            the name to use to get the enum instance
+	 * @return the Rating, the literal enum class
 	 * @generated
 	 */
 	public static Rating getByName(String name) {
@@ -98,6 +103,9 @@ public enum Rating {
 	 * Returns the '<em><b>Rating</b></em>' literal with the specified integer
 	 * value. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @param value
+	 *            the value to use to get the enum instance
+	 * @return the Rating, the literal enum
 	 * @generated
 	 */
 	public static Rating get(int value) {
@@ -165,6 +173,7 @@ public enum Rating {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @return the value
 	 * @generated
 	 */
 	public int getValue() {
@@ -174,6 +183,7 @@ public enum Rating {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @return the name
 	 * @generated
 	 */
 	public String getName() {
@@ -183,6 +193,7 @@ public enum Rating {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @return the literal of this enum instance
 	 * @generated
 	 */
 	public String getLiteral() {

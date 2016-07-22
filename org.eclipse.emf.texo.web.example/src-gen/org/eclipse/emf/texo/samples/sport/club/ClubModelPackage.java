@@ -192,8 +192,7 @@ public class ClubModelPackage extends ModelPackage {
 	public static ClubModelPackage initialize() {
 
 		if (isInitialized) {
-			return (ClubModelPackage) ModelResolver.getInstance()
-					.getModelPackage(NS_URI);
+			return (ClubModelPackage) ModelResolver.getInstance().getModelPackage(NS_URI);
 		}
 
 		final ClubModelPackage modelPackage = new ClubModelPackage();
@@ -214,15 +213,13 @@ public class ClubModelPackage extends ModelPackage {
 		modelPackage.getEPackage();
 
 		// register the relation between a Class and its EClassifier
-		ModelResolver.getInstance().registerClassModelMapping(Club.class,
-				modelPackage.getClubEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(Team.class,
-				modelPackage.getTeamEClass(), modelPackage);
-		ModelResolver.getInstance().registerClassModelMapping(Member.class,
-				modelPackage.getMemberEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Club.class, modelPackage.getClubEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Team.class, modelPackage.getTeamEClass(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Member.class, modelPackage.getMemberEClass(),
+				modelPackage);
 
-		ModelResolver.getInstance().registerClassModelMapping(Gender.class,
-				modelPackage.getGenderEEnum(), modelPackage);
+		ModelResolver.getInstance().registerClassModelMapping(Gender.class, modelPackage.getGenderEEnum(),
+				modelPackage);
 
 		// and return ourselves
 		return modelPackage;
@@ -231,7 +228,7 @@ public class ClubModelPackage extends ModelPackage {
 	/**
 	 * Returns the {@link ModelFactory} of this ModelPackage. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the {@link ClubModelFactory} instance.
 	 * @generated
 	 */
@@ -256,7 +253,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * Returns the name of the ecore file containing the ecore model of the
 	 * {@link EPackage} managed here. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the name of the ecore file
 	 * @generated
 	 */
@@ -285,8 +282,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getClub_Teams() {
-		return (EReference) getClubEClass().getEAllStructuralFeatures().get(
-				CLUB_TEAMS_FEATURE_ID);
+		return (EReference) getClubEClass().getEAllStructuralFeatures().get(CLUB_TEAMS_FEATURE_ID);
 	}
 
 	/**
@@ -309,8 +305,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getTeam_Name() {
-		return (EAttribute) getTeamEClass().getEAllStructuralFeatures().get(
-				TEAM_NAME_FEATURE_ID);
+		return (EAttribute) getTeamEClass().getEAllStructuralFeatures().get(TEAM_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -322,8 +317,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EReference getTeam_Member() {
-		return (EReference) getTeamEClass().getEAllStructuralFeatures().get(
-				TEAM_MEMBER_FEATURE_ID);
+		return (EReference) getTeamEClass().getEAllStructuralFeatures().get(TEAM_MEMBER_FEATURE_ID);
 	}
 
 	/**
@@ -334,8 +328,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EClass getMemberEClass() {
-		return (EClass) getEPackage().getEClassifiers().get(
-				MEMBER_CLASSIFIER_ID);
+		return (EClass) getEPackage().getEClassifiers().get(MEMBER_CLASSIFIER_ID);
 	}
 
 	/**
@@ -347,8 +340,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getMember_Name() {
-		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(
-				MEMBER_NAME_FEATURE_ID);
+		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(MEMBER_NAME_FEATURE_ID);
 	}
 
 	/**
@@ -360,8 +352,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getMember_LastName() {
-		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(
-				MEMBER_LASTNAME_FEATURE_ID);
+		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(MEMBER_LASTNAME_FEATURE_ID);
 	}
 
 	/**
@@ -373,8 +364,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getMember_Age() {
-		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(
-				MEMBER_AGE_FEATURE_ID);
+		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(MEMBER_AGE_FEATURE_ID);
 	}
 
 	/**
@@ -386,8 +376,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EAttribute getMember_Gender() {
-		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(
-				MEMBER_GENDER_FEATURE_ID);
+		return (EAttribute) getMemberEClass().getEAllStructuralFeatures().get(MEMBER_GENDER_FEATURE_ID);
 	}
 
 	/**
@@ -398,8 +387,7 @@ public class ClubModelPackage extends ModelPackage {
 	 * @generated
 	 */
 	public EEnum getGenderEEnum() {
-		return (EEnum) getEPackage().getEClassifiers()
-				.get(GENDER_CLASSIFIER_ID);
+		return (EEnum) getEPackage().getEClassifiers().get(GENDER_CLASSIFIER_ID);
 	}
 
 	/**
@@ -422,8 +410,7 @@ public class ClubModelPackage extends ModelPackage {
 		case GENDER_CLASSIFIER_ID:
 			return Gender.class;
 		default:
-			throw new IllegalArgumentException("The EClassifier '"
-					+ eClassifier + "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClassifier '" + eClassifier + "' is not defined in this EPackage");
 		}
 	}
 }

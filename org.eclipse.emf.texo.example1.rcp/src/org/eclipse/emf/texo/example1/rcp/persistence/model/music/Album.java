@@ -8,15 +8,12 @@ import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OrderColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifiable;
 
 /**
@@ -25,7 +22,7 @@ import org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable.Identifi
  * 
  * @generated
  */
-@Entity(name = "Album")
+@Entity(name = "org_elver_music_Album")
 public class Album extends Identifiable {
 
 	/**
@@ -33,7 +30,7 @@ public class Album extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	private String name = null;
 
 	/**
@@ -41,9 +38,7 @@ public class Album extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, optional = true, targetEntity = Artist.class)
-	@JoinColumns({ @JoinColumn() })
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private Artist artist = null;
 
 	/**
@@ -51,7 +46,7 @@ public class Album extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@Basic(optional = true)
+	@Basic()
 	@Temporal(TemporalType.DATE)
 	private Date releaseDate = null;
 
@@ -60,10 +55,7 @@ public class Album extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, targetEntity = Genre.class)
-	@OrderColumn()
-	@JoinTable(name = "Album_genres")
+	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private List<Genre> genres = new ArrayList<Genre>();
 
 	/**
@@ -71,10 +63,7 @@ public class Album extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH }, targetEntity = Song.class)
-	@OrderColumn()
-	@JoinTable(name = "Album_songs")
+	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private List<Song> songs = new ArrayList<Song>();
 
 	/**
@@ -83,13 +72,13 @@ public class Album extends Identifiable {
 	 * @generated
 	 */
 	@ElementCollection()
-	@OrderColumn()
-	@CollectionTable(name = "Album_ratings")
+	@Enumerated(EnumType.STRING)
+	@CollectionTable()
 	private List<Rating> ratings = new ArrayList<Rating>();
 
 	/**
 	 * Returns the value of '<em><b>name</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>name</b></em>' feature
@@ -101,11 +90,11 @@ public class Album extends Identifiable {
 
 	/**
 	 * Sets the '{@link Album#getName() <em>name</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Album#getName() name}' feature.
+	 * @param newName
+	 *            the new value of the '{@link Album#getName() name}' feature.
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -114,7 +103,7 @@ public class Album extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>artist</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>artist</b></em>' feature
@@ -126,11 +115,12 @@ public class Album extends Identifiable {
 
 	/**
 	 * Sets the '{@link Album#getArtist() <em>artist</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Album#getArtist() artist}' feature.
+	 * @param newArtist
+	 *            the new value of the '{@link Album#getArtist() artist}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setArtist(Artist newArtist) {
@@ -139,7 +129,7 @@ public class Album extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>releaseDate</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>releaseDate</b></em>' feature
@@ -151,12 +141,12 @@ public class Album extends Identifiable {
 
 	/**
 	 * Sets the '{@link Album#getReleaseDate() <em>releaseDate</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Album#getReleaseDate() releaseDate}'
-	 *            feature.
+	 * @param newReleaseDate
+	 *            the new value of the '{@link Album#getReleaseDate()
+	 *            releaseDate}' feature.
 	 * @generated
 	 */
 	public void setReleaseDate(Date newReleaseDate) {
@@ -165,7 +155,7 @@ public class Album extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>genres</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>genres</b></em>' feature
@@ -176,45 +166,13 @@ public class Album extends Identifiable {
 	}
 
 	/**
-	 * Adds to the <em>genres</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void addToGenres(Genre genresValue) {
-		if (!genres.contains(genresValue)) {
-			genres.add(genresValue);
-		}
-	}
-
-	/**
-	 * Removes from the <em>genres</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void removeFromGenres(Genre genresValue) {
-		if (genres.contains(genresValue)) {
-			genres.remove(genresValue);
-		}
-	}
-
-	/**
-	 * Clears the <em>genres</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void clearGenres() {
-		while (!genres.isEmpty()) {
-			removeFromGenres(genres.iterator().next());
-		}
-	}
-
-	/**
 	 * Sets the '{@link Album#getGenres() <em>genres</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Album#getGenres() genres}' feature.
+	 * @param newGenres
+	 *            the new value of the '{@link Album#getGenres() genres}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setGenres(List<Genre> newGenres) {
@@ -223,7 +181,7 @@ public class Album extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>songs</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>songs</b></em>' feature
@@ -234,45 +192,12 @@ public class Album extends Identifiable {
 	}
 
 	/**
-	 * Adds to the <em>songs</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void addToSongs(Song songsValue) {
-		if (!songs.contains(songsValue)) {
-			songs.add(songsValue);
-		}
-	}
-
-	/**
-	 * Removes from the <em>songs</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void removeFromSongs(Song songsValue) {
-		if (songs.contains(songsValue)) {
-			songs.remove(songsValue);
-		}
-	}
-
-	/**
-	 * Clears the <em>songs</em> feature.
-	 * 
-	 * @generated
-	 */
-	public void clearSongs() {
-		while (!songs.isEmpty()) {
-			removeFromSongs(songs.iterator().next());
-		}
-	}
-
-	/**
 	 * Sets the '{@link Album#getSongs() <em>songs</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Album#getSongs() songs}' feature.
+	 * @param newSongs
+	 *            the new value of the '{@link Album#getSongs() songs}' feature.
 	 * @generated
 	 */
 	public void setSongs(List<Song> newSongs) {
@@ -281,7 +206,7 @@ public class Album extends Identifiable {
 
 	/**
 	 * Returns the value of '<em><b>ratings</b></em>' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the value of '<em><b>ratings</b></em>' feature
@@ -293,11 +218,12 @@ public class Album extends Identifiable {
 
 	/**
 	 * Sets the '{@link Album#getRatings() <em>ratings</em>}' feature.
-	 * 
+	 *
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @param the
-	 *            new value of the '{@link Album#getRatings() ratings}' feature.
+	 * @param newRatings
+	 *            the new value of the '{@link Album#getRatings() ratings}'
+	 *            feature.
 	 * @generated
 	 */
 	public void setRatings(List<Rating> newRatings) {
@@ -312,7 +238,7 @@ public class Album extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Album " + " [name: " + getName() + "]" + " [releaseDate: "
-				+ getReleaseDate() + "]";
+		return "Album " + " [name: " + getName() + "]" + " [releaseDate: " + getReleaseDate() + "]" + "{extends: "
+				+ super.toString() + "} ";
 	}
 }

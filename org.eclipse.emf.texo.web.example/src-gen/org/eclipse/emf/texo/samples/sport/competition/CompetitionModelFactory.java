@@ -36,9 +36,8 @@ public class CompetitionModelFactory implements ModelFactory {
 		case CompetitionModelPackage.COMPETITION_CLASSIFIER_ID:
 			return createCompetition();
 		default:
-			throw new IllegalArgumentException("The EClass '"
-					+ eClass.getName()
-					+ "' is not a valid EClass for this EPackage");
+			throw new IllegalArgumentException(
+					"The EClass '" + eClass.getName() + "' is not a valid EClass for this EPackage");
 		}
 	}
 
@@ -61,8 +60,7 @@ public class CompetitionModelFactory implements ModelFactory {
 			modelObject = new CompetitionModelObject();
 			break;
 		default:
-			throw new IllegalArgumentException("The EClass '" + eClass
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClass '" + eClass + "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
 		return (ModelObject<T>) modelObject;
@@ -70,22 +68,22 @@ public class CompetitionModelFactory implements ModelFactory {
 
 	/**
 	 * Creates a feature map entry instance for a certain EStructuralFeature.
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature
 	 * @return the pojo feature map entry
 	 * @generated
 	 */
 	public Object createFeatureMapEntry(EStructuralFeature eFeature) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
 	 * Wraps a feature map entry pojo in a {@link AbstractModelFeatureMapEntry}.
 	 * If the feature map entry is null then a new one is created and <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param eFeature
 	 *            the feature map feature of the object
 	 * @param adaptee
@@ -93,10 +91,9 @@ public class CompetitionModelFactory implements ModelFactory {
 	 * @return the wrapper {@link ModelFeatureMapEntry}
 	 * @generated
 	 */
-	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(
-			EStructuralFeature eFeature, Object adaptee) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(EStructuralFeature eFeature, Object adaptee) {
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -124,8 +121,7 @@ public class CompetitionModelFactory implements ModelFactory {
 	public Object createFromString(EDataType eDataType, String value) {
 		switch (eDataType.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage");
 		}
 	}
 
@@ -142,8 +138,7 @@ public class CompetitionModelFactory implements ModelFactory {
 	public String convertToString(EDataType eDataType, Object value) {
 		switch (eDataType.getClassifierID()) {
 		default:
-			throw new IllegalArgumentException("The EDatatype '" + eDataType
-					+ "' is not defined in this EPackage.");
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage.");
 		}
 	}
 
@@ -157,8 +152,8 @@ public class CompetitionModelFactory implements ModelFactory {
 	 *
 	 * @generated
 	 */
-	public static class CompetitionModelObject<E extends Competition> extends
-			IdentifiableModelFactory.IdentifiableModelObject<E> {
+	public static class CompetitionModelObject<E extends Competition>
+			extends IdentifiableModelFactory.IdentifiableModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -226,8 +221,7 @@ public class CompetitionModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eAddTo(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
@@ -242,8 +236,7 @@ public class CompetitionModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
-		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 

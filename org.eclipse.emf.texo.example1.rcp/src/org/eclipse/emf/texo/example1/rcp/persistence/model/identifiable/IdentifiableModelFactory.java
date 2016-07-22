@@ -3,6 +3,7 @@ package org.eclipse.emf.texo.example1.rcp.persistence.model.identifiable;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.texo.model.AbstractModelFeatureMapEntry;
 import org.eclipse.emf.texo.model.AbstractModelObject;
 import org.eclipse.emf.texo.model.ModelFactory;
 import org.eclipse.emf.texo.model.ModelFeatureMapEntry;
@@ -32,15 +33,16 @@ public class IdentifiableModelFactory implements ModelFactory {
 		switch (eClass.getClassifierID()) {
 		case IdentifiableModelPackage.IDENTIFIABLE_CLASSIFIER_ID:
 			return createIdentifiable();
+		default:
+			throw new IllegalArgumentException(
+					"The EClass '" + eClass.getName() + "' is not a valid EClass for this EPackage");
 		}
-		throw new IllegalArgumentException("The EClass '" + eClass.getName()
-				+ "' is not a valid EClass for this EPackage");
 	}
 
 	/**
 	 * Wraps an object in a {@link ModelObject}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the object
 	 * @param adaptee
@@ -49,7 +51,7 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModelObject createModelObject(EClass eClass, Object adaptee) {
+	public <T> ModelObject<T> createModelObject(EClass eClass, T adaptee) {
 		ModelObject<Object> modelObject = null;
 		switch (eClass.getClassifierID()) {
 		case IdentifiableModelPackage.IDENTIFIABLE_CLASSIFIER_ID:
@@ -59,11 +61,10 @@ public class IdentifiableModelFactory implements ModelFactory {
 			modelObject = new IdentifiableInterfaceModelObject();
 			break;
 		default:
-			throw new IllegalArgumentException("The EClass '" + eClass
-					+ "' is not defined in this EPackage");
+			throw new IllegalArgumentException("The EClass '" + eClass + "' is not defined in this EPackage");
 		}
 		modelObject.setTarget(adaptee);
-		return modelObject;
+		return (ModelObject<T>) modelObject;
 	}
 
 	/**
@@ -75,8 +76,8 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 * @generated
 	 */
 	public Object createFeatureMapEntry(EStructuralFeature eFeature) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -91,10 +92,9 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 * @return the wrapper {@link ModelFeatureMapEntry}
 	 * @generated
 	 */
-	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(
-			EStructuralFeature eFeature, Object adaptee) {
-		throw new IllegalArgumentException("The EStructuralFeature '"
-				+ eFeature + "' is not a valid feature map in this EPackage");
+	public ModelFeatureMapEntry<?> createModelFeatureMapEntry(EStructuralFeature eFeature, Object adaptee) {
+		throw new IllegalArgumentException(
+				"The EStructuralFeature '" + eFeature + "' is not a valid feature map in this EPackage");
 	}
 
 	/**
@@ -121,9 +121,9 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 */
 	public Object createFromString(EDataType eDataType, String value) {
 		switch (eDataType.getClassifierID()) {
+		default:
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage");
 		}
-		throw new IllegalArgumentException("The EDatatype '" + eDataType
-				+ "' is not defined in this EPackage");
 	}
 
 	/**
@@ -138,9 +138,9 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 */
 	public String convertToString(EDataType eDataType, Object value) {
 		switch (eDataType.getClassifierID()) {
+		default:
+			throw new IllegalArgumentException("The EDatatype '" + eDataType + "' is not defined in this EPackage.");
 		}
-		throw new IllegalArgumentException("The EDatatype '" + eDataType
-				+ "' is not defined in this EPackage.");
 	}
 
 	/**
@@ -149,8 +149,7 @@ public class IdentifiableModelFactory implements ModelFactory {
 	 * 
 	 * @generated
 	 */
-	public static class IdentifiableModelObject<E extends Identifiable> extends
-			AbstractModelObject<E> {
+	public static class IdentifiableModelObject<E extends Identifiable> extends AbstractModelObject<E> {
 		/**
 		 * @generated
 		 */
@@ -169,6 +168,14 @@ public class IdentifiableModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return Identifiable.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
@@ -176,8 +183,9 @@ public class IdentifiableModelFactory implements ModelFactory {
 				return getTarget().getDb_Id();
 			case IdentifiableModelPackage.IDENTIFIABLE_DB_VERSION_FEATURE_ID:
 				return getTarget().getDb_version();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -193,40 +201,47 @@ public class IdentifiableModelFactory implements ModelFactory {
 			case IdentifiableModelPackage.IDENTIFIABLE_DB_VERSION_FEATURE_ID:
 				getTarget().setDb_version((Integer) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 
 	/**
 	 * The adapter/wrapper for the EClass '<em><b>IdentifiableInterface</b></em>
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * '.
+	 *
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param <E>
+	 *            the domain model java class
+	 *
 	 * @generated
 	 */
 	public static class IdentifiableInterfaceModelObject<E extends IdentifiableInterface>
@@ -235,8 +250,7 @@ public class IdentifiableModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		public EClass eClass() {
-			return IdentifiableModelPackage.INSTANCE
-					.getIdentifiableInterfaceEClass();
+			return IdentifiableModelPackage.INSTANCE.getIdentifiableInterfaceEClass();
 		}
 
 		/**
@@ -250,6 +264,14 @@ public class IdentifiableModelFactory implements ModelFactory {
 		 * @generated
 		 */
 		@Override
+		public Class<?> getTargetClass() {
+			return IdentifiableInterface.class;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
 		public Object eGet(EStructuralFeature eStructuralFeature) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
@@ -257,8 +279,9 @@ public class IdentifiableModelFactory implements ModelFactory {
 				return getTarget().getDb_Id();
 			case IdentifiableModelPackage.IDENTIFIABLEINTERFACE_DB_VERSION_FEATURE_ID:
 				return getTarget().getDb_version();
+			default:
+				return super.eGet(eStructuralFeature);
 			}
-			return super.eGet(eStructuralFeature);
 		}
 
 		/**
@@ -274,33 +297,35 @@ public class IdentifiableModelFactory implements ModelFactory {
 			case IdentifiableModelPackage.IDENTIFIABLEINTERFACE_DB_VERSION_FEATURE_ID:
 				getTarget().setDb_version((Integer) value);
 				return;
+			default:
+				super.eSet(eStructuralFeature, value);
 			}
-			super.eSet(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eAddTo(EStructuralFeature eStructuralFeature, Object value) {
+		public boolean eAddTo(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eAddTo(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public void eRemoveFrom(EStructuralFeature eStructuralFeature,
-				Object value) {
+		public boolean eRemoveFrom(EStructuralFeature eStructuralFeature, Object value) {
 			final int featureID = eClass().getFeatureID(eStructuralFeature);
 			switch (featureID) {
 
+			default:
+				return super.eRemoveFrom(eStructuralFeature, value);
 			}
-			super.eAddTo(eStructuralFeature, value);
 		}
 	}
 

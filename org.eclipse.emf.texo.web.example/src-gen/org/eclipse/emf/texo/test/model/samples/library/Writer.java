@@ -31,8 +31,7 @@ public class Writer extends Identifiable {
 	 * 
 	 * @generated
 	 */
-	@OneToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST,
-			CascadeType.REFRESH })
+	@OneToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	@JoinTable()
 	private List<Book> books = new ArrayList<Book>();
 
@@ -75,7 +74,7 @@ public class Writer extends Identifiable {
 
 	/**
 	 * Adds to the <em>books</em> feature.
-	 * 
+	 *
 	 * @param booksValue
 	 *            the value to add
 	 * @return true if the value is added to the collection (it was not yet
@@ -93,12 +92,12 @@ public class Writer extends Identifiable {
 
 	/**
 	 * Removes from the <em>books</em> feature.
-	 * 
+	 *
 	 * @param booksValue
 	 *            the value to remove
 	 * @return true if the value is removed from the collection (it existed in
 	 *         the collection before removing), false otherwise
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean removeFromBooks(Book booksValue) {
@@ -146,7 +145,6 @@ public class Writer extends Identifiable {
 	 */
 	@Override
 	public String toString() {
-		return "Writer " + " [name: " + getName() + "]" + "{extends: "
-				+ super.toString() + "} ";
+		return "Writer " + " [name: " + getName() + "]" + "{extends: " + super.toString() + "} ";
 	}
 }

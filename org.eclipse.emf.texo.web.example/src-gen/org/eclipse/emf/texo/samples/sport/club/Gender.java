@@ -59,8 +59,7 @@ public enum Gender {
 	 * 
 	 * @generated
 	 */
-	public static final List<Gender> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Gender> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Gender</b></em>' literal with the specified literal
